@@ -1,0 +1,198 @@
+/* 左边菜单 */
+.left-menu-wrap{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 60px;
+	height: 100%;
+	background: rgb(36,39,49);
+}
+.menu-inner{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.logo-box{
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	width: 60px;
+	height: 60px;
+	border-radius: 8px;
+	background: -webkit-linear-gradient(bottom, #d6d6d6, #fff);
+	background: linear-gradient(bottom, #d6d6d6, #fff);
+}
+.main-menu{
+	position: absolute;
+	top: 100px;
+	left: 0;
+}
+.main-menu .level-1{
+	position: relative;
+	width: 60px;
+	height: 60px;
+	font-size: 12px;
+	text-align: center;
+	cursor: pointer;
+	color: #fff;
+	background-position: center 10px;
+	background-repeat: no-repeat;
+}
+.main-menu .index-page{
+	background-image: url(../images/ic_home.png);
+}
+.main-menu .clients-page{
+	background-image: url(../images/ic_zhanghuguihua.png);
+}
+.main-menu .seals-page{
+	background-image: url(../images/ic_xiaoshouguanli.png);
+}
+.main-menu .analyse-page{
+	background-image: url(../images/ic_kehufenxi.png);
+}
+.main-menu .product-page{
+	background-image: url(../images/ic_chanpinguanli.png);
+}
+.main-menu .user-page{
+	background-image: url(../images/ic_yonghuguanli.png);
+}
+.main-menu .client-page{
+	background-image: url(../images/ic_kehuguanli.png);
+}
+.main-menu .data-page{
+	background-image: url(../images/ic_shujuguanli.png);
+}
+.main-menu .params-page{
+	background-image: url(../images/ic_jisuancanshu.png);
+}
+.main-menu .institution-page{
+	background-image: url(../images/ic_yinhangjigou.png);
+}
+.main-menu .trade-page{
+	background-image: url(../images/ic_hangyeguanli.png);
+}
+.level-1-text,
+.modify-pwd-text{
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	bottom: 0;
+}
+/* 二级菜单 */
+.sub-menu{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 100%;
+	background: rgba(0,0,0,0.5);
+	z-index: 1999;
+}
+.sub-menu .level-2{
+	display: block;
+	padding-left: 20px;
+	width: 180px;
+	text-align: left;
+	height: 40px;
+	line-height: 40px;
+	color: #fff;
+}
+/* 退出 */
+.logout-btn{
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+	text-align: center;
+	cursor: pointer;
+	color: #fff;
+}
+/*修改密码*/
+.modify-pwd{
+	position: absolute;
+	bottom: 60px;
+	width: 60px;
+	height: 60px;
+	background-image: url(../images/config.png);
+	background-position: center 10px;
+	background-repeat: no-repeat;
+	text-align: center;
+	cursor: pointer;
+	color: #fff;
+	font-size: 12px;
+}
+.person-info-wrap,
+.change-pwd-wrap{
+	width: 80%;
+	height: 100%;
+	margin: 0 auto;
+}
+.info-line-wrap{
+	width: 100%;
+	padding: 10px 0;
+	font-size: 16px;
+}
+.person-info-wrap .info-title,
+.person-info-wrap .info-val,
+.change-pwd-wrap .info-title,
+.change-pwd-wrap .info-val{
+	display: inline-block;
+}
+.person-info-wrap .info-title,
+.change-pwd-wrap .info-title{
+	width: 80px;
+}
+
+.person-info-wrap .btn-wrap{
+	width: 205px;
+	margin: 30px auto 0 auto;
+}
+.change-pwd,
+.cancel-info-btn{
+	display: inline-block;
+	width: 100px;
+	font-size: 12px;
+	text-align: center;
+	height: 30px;
+	line-height: 30px;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	cursor: pointer;
+}
+.change-pwd{
+	border: 1px solid #4776c7;
+	color: #fff;
+    background-color: #4776c7;
+}
+.change-pwd-wrap h4{
+	font-weight: normal;
+	font-size: 16px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+}
+.change-pwd-btn-wrap{
+	width: 165px;
+	margin: 0 auto;
+}
+.submit-changed,
+.cancel-change{
+	width: 80px;
+	height: 30px;
+	line-height: 30px;
+	display: inline-block;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	text-align: center;
+	cursor: pointer;
+}
+.submit-changed{
+	border: 1px solid #4776c7;
+	color: #fff;
+    background-color: #4776c7;
+}
+/* menu active */
+.menu-active,
+.menu-selected{
+	background-color: rgb(71,118,199);
+}

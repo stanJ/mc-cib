@@ -1,0 +1,114 @@
+<!DOCTYPE>
+<html > <!-- 遵循W3C规范 具体去看一下百度百科-->
+<head>
+    <title>CIB</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"> <!-- 规范网页编码格式UTF-8 -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Expires" CONTENT="0"> 
+</head>
+<body>
+	<script src="../js/common/highcharts.src.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/common/highcharts-more.src.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/common/solid-gauge.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/base.js" type="text/javascript" charset="utf-8" id="seajsnode"></script>	
+	<div id="wrap">
+		<div id="right-content">
+			<h1 class="page-name">有贷户分层</h1>
+			<div id="top-select-wrap">
+				<div class="top-select bg-base-blue">
+					<div class="select-box bg-white">
+						<select name="state" id="subsidiary" class="js-example-basic-single"></select>
+					</div>
+				</div>
+				<div class="top-select bg-base-blue">
+					<div class="select-box bg-white">
+						<select name="state" id="branch" class="js-example-basic-single"></select>
+					</div>
+				</div>
+				<div class="top-select bg-base-blue date-select">
+					<div class="select-box bg-white">
+						<select id="estimate" class="js-example-basic-single"></select>
+					</div>
+				</div>
+			</div>
+			<div id="right-main-content" class="bg-white">
+				<div id="right-tab">
+					<div class="right-tab-inner">
+						<div class="unsuccess">累计曲线</div>
+						<div class="success selected-filter">分层</div>
+					</div>
+					<div class="selected-tab bg-base-blue">分层</div>
+				</div>
+				<div class="clearfix"></div>			
+				<div class="down-mark-dashed"></div>
+				<div id="chart-wrap">
+					<div class="right-legend">
+						<ul>
+							<li class="legendbox head-count">客户数(个)</li>
+							<li class="legendbox net-income">净收入(亿元)</li>
+							<li class="legendbox ead">信贷资源(亿元)</li>
+							<li class="legendbox profit">经济利润(亿元)</li>
+						</ul>
+					</div>
+					<div class="y-title">RAROC(Risk Adjusted Return on Capital)</div>
+					<div class="x-title">EAD(万)</div>
+					<div class="y-middle-title"><span class="percent-text"></span>:<span class="percent-show"></span>%</div>
+					<div class="x-middle-title"><span class="avg-text"></span>:<span class="avg-show"></span>万</div>
+					<div class="chart-box box-top-left" data-key="LAYER_LOAN_3">
+						<div class="chart-title">"未来之星"客户>>提升钱包份额</div>
+						<div id="top-left-chart" class="chart-render">
+							<ul>
+								<li id="top-left-chart1" class="chart-li"></li>
+								<li id="top-left-chart2" class="chart-li"></li>
+								<li id="top-left-chart3" class="chart-li"></li>
+								<li id="top-left-chart4" class="chart-li"></li>
+							</ul>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+					<div class="chart-box box-top-right" data-key="LAYER_LOAN_2">
+						<div class="chart-title">"现金牛"客户>>提升市场份额</div>
+						<div id="top-right-chart" class="chart-render">
+							<ul>
+								<li id="top-right-chart1" class="chart-li"></li>
+								<li id="top-right-chart2" class="chart-li"></li>
+								<li id="top-right-chart3" class="chart-li"></li>
+								<li id="top-right-chart4" class="chart-li"></li>
+							</ul>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+					<div class="chart-box box-bottom-left" data-key="LAYER_LOAN_5">
+						<div class="chart-title">"限期改善"客户>>策略性退出</div>
+						<div id="bottom-left-chart" class="chart-render">
+							<ul>
+								<li id="bottom-left-chart1" class="chart-li"></li>
+								<li id="bottom-left-chart2" class="chart-li"></li>
+								<li id="bottom-left-chart3" class="chart-li"></li>
+								<li id="bottom-left-chart4" class="chart-li"></li>
+							</ul>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+					<div class="chart-box box-bottom-right" data-key="LAYER_LOAN_4">
+						<div class="chart-title">"提升综合收益"客户>>提升综合收益</div>
+						<div id="bottom-right-chart" class="chart-render">
+							<ul>
+								<li id="bottom-right-chart1" class="chart-li"></li>
+								<li id="bottom-right-chart2" class="chart-li"></li>
+								<li id="bottom-right-chart3" class="chart-li"></li>
+								<li id="bottom-right-chart4" class="chart-li"></li>
+							</ul>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

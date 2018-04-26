@@ -1,0 +1,196 @@
+<!DOCTYPE>
+<html > <!-- 遵循W3C规范 具体去看一下百度百科-->
+<head>
+    <title>CIB</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"> <!-- 规范网页编码格式UTF-8 -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Expires" CONTENT="0"> 
+</head>
+<body>
+	<script src="../js/base.js" type="text/javascript" charset="utf-8" id="seajsnode"></script>
+	<div id="wrap">
+		<div id="right-content">
+			<h1 class="page-name">有贷户细分</h1>
+			<div id="top-select-wrap" style="margin-top: 10px;">
+				<div class="top-select bg-base-blue">
+					<div class="select-box bg-white">
+						<select name="state" id="subsidiary" class="js-example-basic-single">
+							<option></option>
+						</select>
+					</div>
+				</div>
+				<div class="top-select bg-base-blue">
+					<div class="select-box bg-white">
+						<select name="state" id="branch" class="js-example-basic-single">
+							<option></option>
+						</select>
+					</div>
+				</div>
+				<div class="top-select bg-base-blue date-select">
+					<div class="select-box bg-white">
+						<select id="estimate" class="js-example-basic-single"></select>
+					</div>
+				</div>
+			</div>
+			<div class="switch-wrapper">
+				<div class="switch">
+					<div class="switch__inner"></div>
+				</div>
+			</div>
+			<div class="screen-wrapper">
+				<div class="screen">
+					<div class="screen__operation clearfix">
+						<div class="screen__select-wrapper">
+							<div class="screen__title">筛选条件:</div>
+							<div class="screen__select-btn">选择</div>
+						</div>
+						<div class="screen__arrow-wrapper">
+							<div class="screen__arrow screen__arrow--down"></div>
+						</div>
+					</div>
+					<div class="screen__conditions"></div>
+				</div>
+			</div>
+			<div class="page-content">
+				<ul id="line-filter">
+					<li class='tab-filter-title'>指定汇总字段:&nbsp;</li>
+					<li class='tab-filter-item tab-filter-selected' data-key='TRADE'>行业<div class='move-mark bg-base-blue'></div></li>
+					<li class='tab-filter-item' data-key='CREDIT'>信用评级<div class='move-mark bg-base-blue'></div></li>
+					<li class='tab-filter-item' data-key='SIZE'>客户规模<div class='move-mark bg-base-blue'></div></li>
+					<li class='tab-filter-item' data-key='STRATEGIC'>战略客户<div class='move-mark bg-base-blue'></div></li>
+					<li class='tab-filter-item' data-key='ORGAN'>分支机构<div class='move-mark bg-base-blue'></div></li>
+					<li class='tab-filter-item' data-key='LEVER'>客户分层<div class='move-mark bg-base-blue'></div></li>
+					<li class='tab-filter-item' data-key='DURATION'>合作时长<div class='move-mark bg-base-blue'></div></li>
+					<li class='tab-filter-item' data-key='MANAGER'>客户经理<div class='move-mark bg-base-blue'></div></li>
+				</ul>
+				<div id="right-tab">
+					<div class="right-tab-inner">
+						<div class="unsuccess selected-filter">细分客户详情</div>
+						<div class="success">细分客户总览</div>
+					</div>
+					<div class="selected-tab bg-base-blue">细分客户详情</div>
+				</div>
+				<div class="clearfix"></div>
+				<div class="mark-bord"></div>
+				<div id="myGrid"></div>
+				<div id="myChart">
+					<ul class="chart-ul clearfix">
+						<li class="chart-li">
+							<div id="chart1" class="chart-wrap">
+								<span class="chart-title">净收入分布(亿元)</span>
+								<div class="charts-show"></div>
+							</div>
+						</li>
+						<li class="chart-li">
+							<div id="chart2" class="chart-wrap">
+								<span class="chart-title">综合经济利润分布(亿元)</span>
+								<div class="charts-show"></div>
+							</div>
+						</li>
+						<li class="chart-li">
+							<div id="chart3" class="chart-wrap">
+								<span class="chart-title">客户数分布(户)</span>
+								<div class="charts-show"></div>
+							</div>
+						</li>
+						<li class="chart-li">
+							<div id="chart4" class="chart-wrap">
+								<span class="chart-title">期末余额(亿元)</span>
+								<div class="charts-show"></div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/html" id="popupSelect">
+		<div class="popup-wrap">
+			<div class="tab-wrap clearfix">
+				<ul class="tab-ul">
+					<li class="tab-item" data-type="TRADE">行业</li>
+					<li class="tab-item" data-type="CREDIT">信用评级</li>
+					<li class="tab-item" data-type="SIZE">客户规模</li>
+					<li class="tab-item" data-type="STRATEGIC">战略客户</li>
+					<li class="tab-item" data-type="ORGAN">分支机构</li>
+					<li class="tab-item" data-type="LEVER">客户分层</li>
+					<li class="tab-item" data-type="DURATION">合作时长</li>
+					<li class="tab-item" data-type="MANAGER">客户经理</li>
+				</ul>
+			</div>
+			<div class="select-wrap trade-select-wrap" data-target="TRADE">
+				<div class="item-wrap list-level1 item-gray-bg">
+				</div>
+				<div class="item-wrap list-level2">
+				</div>
+				<div class="item-wrap list-level3 item-gray-bg"></div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="select-wrap credit-select-wrap" data-target="CREDIT">
+				<div class="item-wrap list-level1 item-gray-bg">
+				</div>
+				<div class="item-wrap list-level2">
+				</div>
+				<div class="item-wrap list-level3 item-gray-bg"></div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="select-wrap size-select-wrap" data-target="SIZE">
+				<div class="item-wrap list-level1 item-gray-bg">
+				</div>
+				<div class="item-wrap list-level2">
+				</div>
+				<div class="item-wrap list-level3 item-gray-bg"></div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="select-wrap strategic-select-wrap" data-target="STRATEGIC">
+				<div class="item-wrap list-level1 item-gray-bg">
+				</div>
+				<div class="item-wrap list-level2">
+				</div>
+				<div class="item-wrap list-level3 item-gray-bg"></div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="select-wrap organ-select-wrap" data-target="ORGAN">
+				<div class="item-wrap list-level1 item-gray-bg">
+				</div>
+				<div class="item-wrap list-level2">
+				</div>
+				<div class="item-wrap list-level3 item-gray-bg"></div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="select-wrap lever-select-wrap" data-target="LEVER">
+				<div class="item-wrap list-level1 item-gray-bg">
+				</div>
+				<div class="item-wrap list-level2">
+				</div>
+				<div class="item-wrap list-level3 item-gray-bg"></div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="select-wrap duration-select-wrap" data-target="DURATION">
+				<div class="item-wrap list-level1 item-gray-bg">
+				</div>
+				<div class="item-wrap list-level2">
+				</div>
+				<div class="item-wrap list-level3 item-gray-bg"></div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="select-wrap manager-select-wrap" data-target="MANAGER">
+				<div class="item-wrap list-level1 item-gray-bg">
+				</div>
+				<div class="item-wrap list-level2">
+				</div>
+				<div class="item-wrap list-level3 item-gray-bg"></div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="btn-wrap">
+				<div class="reset-btn">重置</div>
+				<div class="confirm-btn">完成</div>
+			</div>
+		</div>
+	</script>
+</body>
+</html>

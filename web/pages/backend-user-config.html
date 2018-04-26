@@ -1,0 +1,153 @@
+<!DOCTYPE>
+<html > <!-- 遵循W3C规范 具体去看一下百度百科-->
+<head>
+    <title>CIB</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"> <!-- 规范网页编码格式UTF-8 -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Expires" CONTENT="0"> 
+</head>
+<body>
+	<script src="../js/base.js" type="text/javascript" charset="utf-8" id="seajsnode"></script>
+	<div id="wrap">
+		<div id="right-content">
+			<h1 class="page-name">用户管理</h1>
+			<div class="backend-content">	
+				<div class="backend-options clearfix">
+					<div class="backend-options__right fr">
+						<label for="import-user" class="input-import">
+							导入
+						</label>
+						<input type="file" id="import-user" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" style="display: none;"/>
+						<button class="button" id="add">添加</button>
+					</div>
+				</div>
+				<div class="backend-table-wrapper">
+					<div class="user-table"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/html" id="page">
+		<div class="checkboxgroup checkboxgroup--page checkboxgroup--disabled">
+   		</div>
+	</script>
+	<script type="text/html" id="user-form">
+		<div class="w2ui-page page-0">
+			<div class="backend-user-form clearfix">
+				<div class="col-wrapper clearfix">
+					<div class="col col-12">
+						<div class="w2ui-field">
+							<label>工号:</label>
+						   <div>
+								<input name="employeeNo" type="text"/>
+							</div>
+						</div>
+					</div>
+					<div class="col col-12">
+						<div class="w2ui-field">
+							<label>姓名:</label>
+						   <div>
+								<input name="employeeName" type="text"/>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-wrapper clearfix">
+					<div class="col col-12">
+						<div class="w2ui-field">
+							<label>联系方式:</label>
+						   <div>
+								<input name="mobile" type="text"/>
+							</div>
+						</div>
+					</div>
+					<div class="col col-12">
+						<div class="w2ui-field">
+							<label>角色:</label>
+						   <div>
+								<input name="roleId" type="list"/>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-wrapper clearfix">
+					<div class="col col-12">
+						<div class="w2ui-field field--branch">
+							<label>所属分行:</label>
+						   <div>
+								<input name="bankBranchId" type="list"/>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-wrapper clearfix">
+					<div class="col col-24">
+						<div class="w2ui-field field--subset">
+							<label>所属支行:</label>
+						   <div>
+						   		<input name="showSubset" type="hidden"/>
+						   		<div class="checkboxgroup" data-name="bankSubsetId">
+						   		</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-wrapper clearfix">
+					<div class="col col-24">
+						<div class="w2ui-field">
+							<label>展示页面:</label>
+						   <div>
+								<div class="checkboxgroup" data-name="resourceIdList">
+						   		</div>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+        <div class="w2ui-buttons">
+            <button class="button popup-btn button--primary" name="save">确定</button>
+            <button class="button popup-btn button--cancel" name="reset">取消</button>
+        </div>
+	</script>
+	<script type="text/html" id="subsetBank">
+		{{each data}}
+		<label class="checkbox">
+    		<span class="checkbox__input">
+    			<input type="checkbox" value="{{$value.bankId}}" data-text="{{$value.bankName}}">
+    		</span>
+    		<span class="checkbox__label">{{$value.bankName}}</span>
+    	</label>
+    	{{/each}}
+	</script>
+	<script type="text/html" id="pageCheckbox">
+		{{each data}}
+		<div class="checkboxgroup__part">
+			<div class="checkboxgroup__title">{{$index}}</div>
+			<div class="checkboxgroup__pages">
+				{{each $value}}
+				<label class="checkbox">
+		    		<span class="checkbox__input">
+		    			<input type="checkbox" value="{{$value.resourceId}}" data-text="{{$value.resourceName}}">
+		    		</span>
+		    		<span class="checkbox__label">{{$value.resourceName}}</span>
+		    	</label>
+		    	{{/each}}
+			</div>
+		</div>
+		{{/each}}
+		<!--{{each data}}
+		<label class="checkbox">
+    		<span class="checkbox__input">
+    			<input type="checkbox" value="{{$value.resourceId}}" data-text="{{$value.resourceName}}">
+    		</span>
+    		<span class="checkbox__label">{{$value.resourceName}}</span>
+    	</label>
+    	{{/each}}-->
+	</script>
+</body>
+</html>

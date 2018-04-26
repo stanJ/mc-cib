@@ -1,0 +1,49 @@
+#subsidiary,
+#branch{
+	display: none;
+}
+.select2-results__option{
+	padding: 15px 6px;
+}
+.top-filter{
+	position: relative;
+}
+#myGrid{
+	overflow: hidden;
+}
+
+/* w2ui */
+.custom-grid{
+    border: 0 none;
+}
+.w2ui-grid-body table .w2ui-head{
+    border: 0 none;
+}
+.w2ui-grid .w2ui-grid-body table td{
+    border: 0 none;
+}
+.w2ui-grid .w2ui-grid-body .w2ui-grid-columns, .w2ui-grid .w2ui-grid-body .w2ui-grid-fcolumns{
+	box-shadow: none;
+}
+.w2ui-grid .w2ui-grid-body table .w2ui-head{
+	height: 50px;
+	border: 0 none;
+	background: rgb(255,255,255);
+}
+.w2ui-grid .w2ui-grid-body table .w2ui-head > div{
+	font-size: 14px;
+	text-align: center;
+}
+.w2ui-grid .w2ui-grid-body table td.w2ui-grid-data > div{
+	font-size: 14px;
+}
+.w2ui-grid .w2ui-grid-body table td.w2ui-grid-data > div > p{
+	padding: 4px 0;
+}
+.w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-odd{
+	height: 50px;
+	background: rgb(247,248,250);
+}
+.w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-even, .w2ui-grid .w2ui-grid-body .w2ui-grid-frecords table tr.w2ui-even{
+	background: rgb(255,255,255);
+}

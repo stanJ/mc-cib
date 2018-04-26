@@ -1,0 +1,186 @@
+#right-main-content{
+	height: 70%;
+}
+#subsidiary,
+#branch{
+	display: none;
+}
+.top-search{
+	float: right;
+	height: 44px;
+	width: 300px;
+	padding: 0 10px 0 0;
+	border-radius: 6px;
+	background-color: rgb(255,255,255);
+}
+.right-search-box,
+.search-btn{
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	height: 100%;
+	line-height: 44px;
+}
+.right-search-box{
+	width: 80%;
+}
+/* .right-search-box:before{
+	position: absolute;
+	content: "";
+	left: 0;
+	top: 0;
+	width: 17px;
+	height: 100%;
+} */
+.search-input{
+	width: 100%;
+	margin: 0;
+	/* width: 90%;
+	height: 22px;
+	margin: 12px 0 0 20px; */
+}
+.search-btn{
+	width: 18%;
+	text-align: center;
+	cursor: pointer;
+	color: rgb(107,113,139);
+}
+.search-btn:before{
+	position: absolute;
+	top: -1px;
+	left: 3px;
+	content: "|";
+	color: rgb(231,233,236);
+}
+
+#myGrid{
+	overflow: hidden;
+}
+/* w2ui */
+.w2ui-grid .w2ui-grid-body .w2ui-grid-columns, .w2ui-grid .w2ui-grid-body .w2ui-grid-fcolumns{
+	box-shadow: none;
+}
+.w2ui-grid .w2ui-grid-body table .w2ui-head{
+	height: 50px;
+	border: 0 none;
+	background: rgb(255,255,255);
+}
+.w2ui-grid .w2ui-grid-body table td.w2ui-grid-data > div{
+	font-size: 14px;
+}
+.w2ui-grid .w2ui-grid-body table .w2ui-head > div{
+	font-size: 14px;
+	text-align: center;
+}
+.w2ui-grid .w2ui-toolbar-search .w2ui-search-all{
+	margin-left: 10px !important;
+}
+.red-statis{
+	color: #E60000;
+}
+.level1-client-show{
+	text-align: left;
+	text-indent: 10px;
+}
+/* popup */
+/* backup */
+#popupBck .w2ui-field > label{
+	width: 80px;
+	padding: 0;
+	text-align: left;
+}
+#popupBck .w2ui-field > div{
+	margin-left: 85px;
+}
+#popupBck .history{
+	height: 150px;
+	padding: 0 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: rgb(245,245,245);
+	overflow: auto;
+}
+#popupBck .history > div{
+	margin: 12px 0;
+}
+#popupBck .history > div > span{
+	display: block;
+	padding: 5px 0;
+}
+#popupBck .history > div > span > .bck-name{
+	float: left;
+}
+#popupBck .history > div > span > .bck-date{
+	float: right;
+}
+#popupBck .history > div > span > .bck-name,
+#popupBck .history > div > span > .bck-date{
+	color: rgb(140,140,140);
+}
+#popupBck .new{
+	height: 90px;
+}
+/* Track */
+#popupTrack .w2ui-field > label{
+	width: 170px;
+	text-align: right;
+}
+#popupTrack .w2ui-field > div{
+	margin-left: 170px;
+}
+.left-date{
+	float: left;
+	color: #8C8C8C;
+}
+.right-check{
+	float: right;
+	text-align: right;
+}
+#popupTrack .w2ui-field > div.round-box{
+	padding-left: 15px;
+	height: 36px;
+	line-height: 36px;
+	border-radius: 4px;
+	border: 1px solid #d2d2d2;
+}
+.require_mark{
+	color: #E60000;
+}
+#visit.w2ui-select{
+	color: #5a5e66 !important;
+}
+#visit.sp_disable{
+	background:#d2d2d2 !important;
+}
+.plus-num,
+.minus-num{
+	position: absolute;
+	top: 0;
+	right: 30px;
+	height: 100%;
+	width: 30px;
+	text-align: center;
+	cursor: pointer;
+	border: 0 none;
+	line-height: 36px;
+	font-size: 20px;
+	border-left: 1px solid #ccc;
+}
+.minus-num{
+	right: 0;	
+}
+/*message*/
+.message-wrap{
+	margin-top: 30px;
+}
+.message-wrap input{
+	height: 36px;
+}
+.message-wrap textarea{
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+.w2ui-message .w2ui-buttons{
+	width: 140px;
+	margin: 50px auto 0 auto;
+}

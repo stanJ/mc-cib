@@ -1,0 +1,14 @@
+.backend-user-form .w2ui-field > label{
+	width: 120px;
+}
+.backend-user-form .w2ui-field > div{
+	margin-left: 120px;
+}
+.checkboxgroup__title{
+	font-size: 15px;
+    line-height: 30px;
+    font-weight: bold;
+}
+.checkboxgroup__part{
+	margin-bottom: 8px;
+}

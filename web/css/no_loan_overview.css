@@ -1,0 +1,36 @@
+.no-loan-overview-content-left{
+	width: 40%;
+}
+.no-loan-overview-content-right{
+	width: 60%;
+}
+.no-loan-overview-chart{
+	height: 500px;
+}
+.no-loan-overview-table-wrapper{
+	position: relative;
+	border: 1px solid #b9b9b9;
+}
+.no-loan-overview-table-title{
+	height: 44px;
+	line-height: 44px;
+	background-color: #de4c39;
+	font-size: 15px;
+	color: #fff;
+	padding-left: 10px;
+}
+.no-loan-overview-arrow{
+	width: 8px;
+	height: 304px;
+	background: url(../images/path_up.png) no-repeat;
+	position: absolute;
+    top: 136px;
+    left: 15px;
+}
+/*.no-loan-overview-table.w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-even,
+.no-loan-overview-table.w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-odd{
+	cursor: pointer;
+}*/
+.no-loan-overview-table.w2ui-grid .w2ui-grid-body table td.w2ui-grid-data {
+	cursor: pointer;
+}

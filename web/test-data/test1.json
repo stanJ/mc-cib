@@ -1,0 +1,12 @@
+{
+	"status": "success",
+	"record": {
+		"name": "stan",
+		"gender": "male",
+		"location": "shanghai",
+		"email": "aa@qq.com",
+		"age": "22",
+		"accountDate": "2017-11-05"
+	}
+}
+

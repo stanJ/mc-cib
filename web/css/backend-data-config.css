@@ -1,0 +1,55 @@
+.year-select-wrapper,
+.month-select-wrapper{
+	width: 200px;
+}
+.backend-content{
+	position: relative;
+}
+#right-content #myGrid{
+	width: 100%;
+	height: 60%;
+	margin-bottom: 0;
+}
+.customer-table .w2ui-toolbar-search{
+	width: 240px;
+}
+.customer-table.w2ui-grid .w2ui-toolbar-search .w2ui-search-all{
+	width: 240px !important;
+}
+/*分页*/
+#right-content ul{
+	position: absolute;
+	top: 20px;
+	right: 0;
+}
+#pagination{
+	position: relative;
+	height: 80px;
+}
+#pagination ul{
+	top: 30px;
+}
+#pagination.light-theme .current{
+	background: rgb(71,118,199);
+	border-color: rgb(71,118,199);
+}
+.page-size{
+	position: absolute;
+	width: 200px;
+	height: 30px;
+	line-height: 30px;
+	right: 25px;
+	text-align: right;
+}
+.page-size span{
+	border: 0 none;
+	padding: 0;
+	margin: 0;
+	background: none;
+	border: 0 none;
+	box-shadow: none;
+	cursor: normal;	
+}
+#tb_customerData_toolbar_item_w2ui-search{
+	display: none;
+}

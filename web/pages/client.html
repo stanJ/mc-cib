@@ -1,0 +1,988 @@
+<!DOCTYPE>
+<html > <!-- 遵循W3C规范 具体去看一下百度百科-->
+<head>
+    <title>CIB</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"> <!-- 规范网页编码格式UTF-8 -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Expires" CONTENT="0"> 
+</head>
+<body>
+	<script src="../js/base.js" type="text/javascript" charset="utf-8" id="seajsnode"></script>
+	<div id="wrap">
+		<div id="right-content">
+			<div class="homepage-header__title" style="margin-bottom: 18px;">
+				<div class="homepage-title-wrapper">
+					<div class="homepage-title">账户规划工具</div>
+					<div class="homepage-refresh-date">数据截止日期2017年12月25日</div>
+				</div>
+			</div>
+			<div class="client-wrapper">
+				<div class="client-info-wrapper">
+					<!--填充客户信息-->
+				</div>
+				<div class="client-tab-wrapper">
+					<div class="tabs-wrapper">
+						<div class="client-tabs">
+							<!--填充tab header内容-->
+						</div>
+					</div>
+					<div class="client-tab-content-container-wrapper">
+						<div class="client-tab-content-container clearfix">
+							<!--填充tab content内容-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!--客户信息-->
+	<script type="text/html" id="client-info">
+		{{ set info = data.customerInfo }}
+		<div class="client-title bg-base-blue" style="position: relative;">
+			<span class="client-customer-code">{{info.customerCode}}</span>
+			{{info.customerName}}
+			<div class="client-year">{{data.year}}年</div>
+		</div>
+		<div class="client-main-info-wrapper">
+			<div class="client-main-info clearfix">
+				<div class="client-main-info__left">
+					<div class="client-main-info__one clearfix">
+						<div class="client-main-info__field">分行:</div>
+						<div class="client-main-info__value">{{info.bankBranchName | placeholder}}</div>
+					</div>
+					<div class="client-main-info__one clearfix">
+						<div class="client-main-info__field">战略客户:</div>
+						<div class="client-main-info__value">{{info.isStrategic | isOrNot}}</div>
+					</div>
+					<div class="client-main-info__one clearfix">
+						<div class="client-main-info__field">行业:</div>
+						{{if data.industryRecommendation == 0}}
+						<div class="client-main-info__value cib-status cib-status--red"><span class="client-value client-value--level1" data-degree="{{data.industryRecommendation}}">{{info.tradeName}}</span></div>
+						{{else if data.industryRecommendation == 1}}
+						<div class="client-main-info__value cib-status cib-status--yellow"><span class="client-value client-value--level1" data-degree="{{data.industryRecommendation}}">{{info.tradeName}}</span></div>
+						{{else if data.industryRecommendation == 2}}
+						<div class="client-main-info__value cib-status cib-status--green"><span class="client-value client-value--level1" data-degree="{{data.industryRecommendation}}">{{info.tradeName}}</span></div>
+						{{else}}
+						<div class="client-main-info__value cib-status"><span class="client-value client-value--level1">{{info.tradeName}}</span></div>
+						{{/if}}
+					</div>
+					<div class="client-main-info__one clearfix">
+						<div class="client-main-info__field">产品经理:</div>
+						<div class="client-main-info__value client-main-info__value--product-manager">{{data.productManager | placeholder}}</div>
+					</div>
+				</div>
+				<div class="client-main-info__middle">
+					<div class="client-main-info__one clearfix">
+						<div class="client-main-info__field">支行:</div>
+						<div class="client-main-info__value">{{info.bankSubsetName | placeholder}}</div>
+					</div>
+					<div class="client-main-info__one clearfix">
+						<div class="client-main-info__field">客户分层:</div>
+						<div class="client-main-info__value">{{info.customerClass | placeholder}}</div>
+					</div>
+					
+					<div class="client-main-info__one clearfix">
+						<div class="client-main-info__field">风险状态:</div>
+						{{if info.hasrRisk === 0}}
+						<div class="client-main-info__value cib-status cib-status--green"><span class="client-value client-value--risk">{{info.hasrRisk | risk}}</span></div>
+						{{else if info.hasrRisk == 1}}
+						<div class="client-main-info__value cib-status cib-status--red"><span class="client-value client-value--risk">{{info.hasrRisk | risk}}</span></div>
+						{{else}}
+						<div class="client-main-info__value cib-status"><span class="client-value client-value--risk">{{info.hasrRisk | risk}}</span></div>
+						{{/if}}
+					</div>
+					<div class="client-main-info__one clearfix">
+						<div class="client-main-info__field">信审经理:</div>
+						<div class="client-main-info__value client-main-info__value--credit-manager">{{data.creditAnalyst | placeholder}}</div>
+					</div>
+				</div>
+				<div class="client-main-info__right">
+					<div class="client-main-info__one clearfix">
+						<div class="client-main-info__field">客户经理:</div>
+						<div class="client-main-info__value">
+							<div class="manager-name-wrapper">
+								<span class="manager-name">{{info.employeeName  | placeholder}}</span>
+								{{if info.employeeName}}
+								<div class="icon icon--phone" data-id="{{info.employeeId}}"></div>
+								{{/if}}
+							</div>
+						</div>
+					</div>
+					<div class="client-main-info__one clearfix">
+						<div class="client-main-info__field">公司规模:</div>
+						<div class="client-main-info__value">{{info.customerSize  | placeholder}}</div>
+					</div>
+					<div class="client-main-info__one clearfix">
+						<div class="client-main-info__field">信用评级:</div>
+						{{if data.creditRecommendation == 0}}
+						<div class="client-main-info__value cib-status cib-status--red"><span class="client-value client-value--credit" data-degree="{{data.creditRecommendation}}">{{info.creditRating}}</span></div>
+						{{else if data.creditRecommendation == 1}}
+						<div class="client-main-info__value cib-status cib-status--yellow"><span class="client-value client-value--credit" data-degree="{{data.creditRecommendation}}">{{info.creditRating}}</span></div>
+						{{else if data.creditRecommendation == 2}}
+						<div class="client-main-info__value cib-status cib-status--green"><span class="client-value client-value--credit" data-degree="{{data.creditRecommendation}}">{{info.creditRating}}</span></div>
+						{{else}}
+						<div class="client-main-info__value cib-status"><span class="client-value client-value--credit">{{info.creditRating}}</span></div>
+						{{/if}}
+						
+						<!--<div class="client-main-info__value">{{info.creditRating}}</div>-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</script>
+	
+	<script type="text/html" id="multi-phone">
+		{{each data}}
+		<div class="manager-name-wrapper">
+			<span class="manager-name">{{$value.text}}</span>
+			<div class="icon icon--phone" data-id="{{$value.id}}"></div>
+			{{if $index != (data.length-1)}}
+			<span class="manager-text">,</span>
+			{{/if}}
+		</div>
+		{{/each}}
+	</script>
+	<script type="text/html" id="single-phone">
+		{{if data.text}}
+		<div class="manager-name-wrapper">
+			<span class="manager-name">{{data.text}}</span>
+			<div class="icon icon--phone" data-id="{{data.id}}"></div>
+		</div>
+		{{/if}}
+	</script>
+	<script type="text/html" id="single-phone-in-table">
+		{{if data.text}}
+		<div class="manager-name-wrapper">
+			<span class="manager-name">{{data.text}}</span>
+			<div class="icon icon--phone icon--phone-in-table" data-id="{{data.id}}"></div>
+		</div>
+		{{/if}}
+	</script>
+	<!--基本信息tab内容-->
+	<script type="text/html" id="base-info-content">
+		{{set customerInfo = data.customerInfo}}
+		<div class="client-btn-wrapper">
+			{{if data.modifyUserName}}
+			<span class="client-modify-info" style="margin-left: 68px;">信息由{{data.modifyUserName}}更新于{{data.modifyDate}}</span>
+			{{/if}}
+			{{if data.roleId == 1}}
+			<div class="client-btn fr">编辑</div>
+			{{/if}}
+		</div>
+		<div class="client-tab-content clearfix">
+			<div class="base-info__left clearfix">
+				<div class="base-info__main">
+					<div class="base-info__title">公司信息</div>
+					<div class="base-info__rect"></div>
+					<div class="base-info__list">
+						<div class="base-info__item clearfix">
+							<div class="base-info__field">公司性质:</div>
+							<div class="base-info__value">{{customerInfo.companyNature | placeholder}}</div>
+						</div>
+						<div class="base-info__item clearfix">
+							<div class="base-info__field">是否上市:</div>
+							<div class="base-info__value">{{customerInfo.listedCompany | placeholder}}</div>
+						</div>
+						<div class="base-info__item clearfix">
+							<div class="base-info__field">所属集团:</div>
+							<div class="base-info__value">{{customerInfo.companyName | placeholder}}</div>
+						</div>
+						<div class="base-info__item clearfix">
+							<div class="base-info__field">组织机构代码:</div>
+							<div class="base-info__value">{{customerInfo.organizationCode | placeholder}}</div>
+						</div>
+						<div class="base-info__item clearfix">
+							<div class="base-info__field">员工数(人):</div>
+							<div class="base-info__value">{{customerInfo.employeeCount | amount}}</div>
+						</div>
+						<div class="base-info__item clearfix">
+							<div class="base-info__field">备注:</div>
+							<div class="base-info__value">{{customerInfo.remark | placeholder}}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="base-info__middle clearfix">
+				<div class="base-info__main">
+					<div class="base-info__title">财务信息</div>
+					<div class="base-info__rect"></div>
+					<div class="base-info__list">
+						<div class="base-info__item clearfix">
+							<div class="base-info__field">报表日期:</div>
+							<div class="base-info__value">{{data.accountDate | placeholder}}</div>
+						</div>
+						<div class="base-info__item clearfix">
+							<div class="base-info__field">主营收入(万元):</div>
+							<div class="base-info__value">{{data.mainBizIncome | amount}}</div>
+						</div>
+						<div class="base-info__item clearfix">
+							<div class="base-info__field">运营成本(万元):</div>
+							<div class="base-info__value">{{data.operatingCosts | amount}}</div>
+						</div>
+						<div class="base-info__item clearfix">
+							<div class="base-info__field">净利润(万元):</div>
+							<div class="base-info__value">{{data.netProfit | amount}}</div>
+						</div>
+						<div class="base-info__item clearfix">
+							<div class="base-info__field">应收账款(万元):</div>
+							<div class="base-info__value">{{data.accountReceivable | amount}}</div>
+						</div>
+						<div class="base-info__item clearfix">
+							<div class="base-info__field">应付账款(万元):</div>
+							<div class="base-info__value">{{data.accountPayable | amount}}</div>
+						</div>
+						<div class="base-info__item clearfix">
+							<div class="base-info__field">资金周转周期(天):</div>
+							<div class="base-info__value">{{data.cashConversionCycle | amount}}</div>
+						</div>
+						<div class="base-info__item clearfix">
+							<div class="base-info__field">总资产(万元):</div>
+							<div class="base-info__value">{{data.totalAsstes | amount}}</div>
+						</div>
+						<div class="base-info__item clearfix">
+							<div class="base-info__field">现金余额(万元):</div>
+							<div class="base-info__value">{{data.cashBalance | amount}}</div>
+						</div>
+						<div class="base-info__item clearfix">
+							<div class="base-info__field">总负债(万元):</div>
+							<div class="base-info__value">{{data.totalLiabilities | amount}}</div>
+						</div>
+						<div class="base-info__item clearfix">
+							<div class="base-info__field">中长期贷款(万元):</div>
+							<div class="base-info__value">{{data.midLongTermLoan | amount}}</div>
+						</div>
+						<div class="base-info__item clearfix">
+							<div class="base-info__field">短期贷款(万元):</div>
+							<div class="base-info__value">{{data.loan | amount}}</div>
+						</div>
+						
+						<div class="base-info__item clearfix">
+							<div class="base-info__field">发行债券总额(万元):</div>
+							<div class="base-info__value">{{data.totalBonds | amount}}</div>
+						</div>
+						<!--<div class="base-info__item clearfix">
+							<div class="base-info__field">发行股票总额:</div>
+							<div class="base-info__value">{{data.totalStock | amount}}</div>
+						</div>
+						-->
+					</div>
+				</div>
+			</div>
+			<div class="base-info__right clearfix">
+				<div class="base-info__main">
+					<div class="base-info__title">客户信息</div>
+					<div class="base-info__rect"></div>
+					<div class="base-info__list">
+						<div class="base-info__item clearfix">
+							<div class="base-info__field">开户日期:</div>
+							<div class="base-info__value">{{data.openDate | placeholder}}</div>
+						</div>
+						<div class="base-info__item clearfix">
+							<div class="base-info__field">与高层关系:</div>
+							<div class="base-info__value">{{data.relationship | placeholder}}</div>
+						</div>
+						<!--<div class="base-info__item clearfix">
+							<div class="base-info__field">合作时间(年):</div>
+							<div class="base-info__value">{{data.cooperationTime}}</div>
+						</div>-->
+						<div class="base-info__item clearfix">
+							<div class="base-info__field">主要联系人:</div>
+							<div class="base-info__value">{{data.primaryContact | placeholder}}</div>
+						</div>
+						<div class="base-info__item clearfix">
+							<div class="base-info__field">职级:</div>
+							<div class="base-info__value">{{data.primaryContactPosition | placeholder}}</div>
+						</div>
+						<div class="base-info__item clearfix">
+							<div class="base-info__field">电话:</div>
+							<div class="base-info__value">{{data.primaryContactPhone | placeholder}}</div>
+						</div>
+						<div class="base-info__item clearfix">
+							<div class="base-info__field">第二联系人:</div>
+							<div class="base-info__value">{{data.otherContact | placeholder}}</div>
+						</div>
+						<div class="base-info__item clearfix">
+							<div class="base-info__field">职级:</div>
+							<div class="base-info__value">{{data.otherContactPosition | placeholder}}</div>
+						</div>
+						<div class="base-info__item clearfix">
+							<div class="base-info__field">电话:</div>
+							<div class="base-info__value">{{data.otherContactPhone | placeholder}}</div>
+						</div>
+						<div class="base-info__item clearfix">
+							<div class="base-info__field">备注:</div>
+							<div class="base-info__value">{{data.remark | placeholder}}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+				
+	</script>
+	<!--基本信息弹框form内容-->
+	<script type="text/html" id="base-info-form">
+		
+		<div class="w2ui-page page-0">
+			
+			<div class="base-form-left clearfix">
+				<div class="base-info__title-wrapper">
+					<div class="base-info__title">公司信息</div>
+					<div class="base-info__rect"></div>
+				</div>
+                <div class="w2ui-field">
+					<input type="hidden" />
+					<label>公司性质:</label>
+				   <div>
+						<input name="companyNature" type="combo" placeholder="例:外资" class="cib-input-select"/>
+					</div>
+				</div>
+				<div class="w2ui-field clearfix">
+					<label>是否上市:</label>
+				   <div>
+						<input name="listedCompany" placeholder="国内a股上市" class="cib-input-select" type="text"/>
+					</div>
+				</div>
+				<div class="w2ui-field">
+					<label>所属集团:</label>
+				   <div>
+						<input name="companyName" type="text"/>
+					</div>
+				</div>
+				<div class="w2ui-field">
+					<label>组织机构代码:</label>
+				   <div>
+						<input name="organizationCode" type="text"/>
+					</div>
+				</div>
+				<div class="w2ui-field">
+					<label>员工数(人):</label>
+				   <div>
+						<input name="employeeCount" type="text"/>
+					</div>
+				</div>
+				<div class="w2ui-field">
+					<label>备注:</label>
+				   <div>
+						<textarea name="companyRemark" type="text"></textarea>
+					</div>
+				</div>
+            </div>
+            <div class="base-form-middle clearfix">
+            	<div class="base-info__title-wrapper">
+					<div class="base-info__title">财务信息</div>
+					<div class="base-info__rect"></div>
+				</div>
+				<div class="w2ui-field">
+					<input type="hidden" />
+					<label>报表日期:</label>
+				   <div>
+						<input name="accountDate" type="text" class="mydate"/>
+					</div>
+				</div>
+				<div class="w2ui-field">
+					<label>主营收入(万元):</label>
+				   <div>
+						<input name="mainBizIncome" type="text"/>
+					</div>
+				</div>
+				<div class="w2ui-field">
+					<label>运营成本(万元):</label>
+				   <div>
+						<input name="operatingCosts" type="text"/>
+					</div>
+				</div>
+				<div class="w2ui-field">
+					<label>净利润(万元):</label>
+				   <div>
+						<input name="netProfit" type="text"/>
+					</div>
+				</div>
+				<div class="w2ui-field">
+					<label>应收账款(万元):</label>
+				   <div>
+						<input name="accountReceivable" type="text"/>
+					</div>
+				</div>
+				<div class="w2ui-field">
+					<label>应付账款(万元):</label>
+				   <div>
+						<input name="accountPayable" type="text"/>
+					</div>
+				</div>
+				<div class="w2ui-field">
+					<label>资金周转周期(天):</label>
+				   <div>
+						<input name="cashConversionCycle" type="text"/>
+					</div>
+				</div>
+				<div class="w2ui-field">
+					<label>总资产(万元):</label>
+				   <div>
+						<input name="totalAsstes" type="text"/>
+					</div>
+				</div>
+				<div class="w2ui-field">
+					<label>现金余额(万元):</label>
+				   <div>
+						<input name="cashBalance" type="text"/>
+					</div>
+				</div>
+				<div class="w2ui-field">
+					<label>总负债(万元):</label>
+				   <div>
+						<input name="totalLiabilities" type="text"/>
+					</div>
+				</div>
+				<div class="w2ui-field">
+					<label>中长期贷款(万元):</label>
+				   <div>
+						<input name="midLongTermLoan" type="text"/>
+					</div>
+				</div>
+				<div class="w2ui-field">
+					<label>短期贷款(万元):</label>
+				   <div>
+						<input name="loan" type="text"/>
+					</div>
+				</div>
+				<div class="w2ui-field">
+					<label>发行债券总额(万元):</label>
+				   <div>
+						<input name="totalBonds" type="text"/>
+					</div>
+				</div>
+				<!--<div class="w2ui-field">
+					<label>发行股票总额:</label>
+				   <div>
+						<input name="totalStock" type="text"/>
+					</div>
+				</div>-->
+            </div>
+            <div class="base-form-right clearfix">
+            
+	            <div class="base-info__title-wrapper">
+	            	<div class="base-info__title">客户信息</div>
+					<div class="base-info__rect"></div>
+				</div>
+				<div class="w2ui-field">
+					<label>开户日期:</label>
+				   <div>
+						<input name="openDate" type="text"/>
+					</div>
+				</div>
+				<div class="w2ui-field">
+					<label>与高层关系:</label>
+				   <div>
+						<input name="relationship" type="text"/>
+					</div>
+				</div>
+				<div class="w2ui-field">
+					<label>主要联系人:</label>
+				   <div>
+						<input name="primaryContact" type="text"/>
+					</div>
+				</div>
+				<div class="w2ui-field">
+					<label>职级:</label>
+				   <div>
+						<input name="primaryContactPosition" type="text"/>
+					</div>
+				</div>
+				<div class="w2ui-field">
+					<label>电话:</label>
+				   <div>
+						<input name="primaryContactPhone" type="text"/>
+					</div>
+				</div>
+				<div class="w2ui-field">
+					<label>第二联系人:</label>
+				   <div>
+						<input name="otherContact" type="text"/>
+					</div>
+				</div>
+				<div class="w2ui-field">
+					<label>职级:</label>
+				   <div>
+						<input name="otherContactPosition" type="text"/>
+					</div>
+				</div>
+				<div class="w2ui-field">
+					<label>电话:</label>
+				   <div>
+						<input name="otherContactPhone" type="text"/>
+					</div>
+				</div>
+				<div class="w2ui-field">
+					<label>备注:</label>
+				   <div>
+						<textarea name="remark" type="text"></textarea>
+					</div>
+				</div>
+			</div>
+            
+        </div>
+            
+        <div class="w2ui-buttons">
+            <button class="button popup-btn button--primary" name="save">确定</button>
+            <button class="button popup-btn button--cancel" name="reset">取消</button>
+        </div>
+			
+	</script>
+	<!--经营与战略tab内容-->
+	<script type="text/html" id="strategy-content">
+		<div class="client-btn-wrapper">
+			{{if data.modifyUserName}}
+			<span class="client-modify-info" style="margin-left: 68px;">信息由{{data.modifyUserName}}更新于{{data.modifyDate}}</span>
+			{{/if}}
+			{{if data.roleId == 1}}
+			<div class="client-btn fr">编辑</div>
+			{{/if}}
+		</div>
+		<div class="client-tab-content clearfix">
+			<div class="strategy-wrapper">
+				<div class="strategy__item clearfix">
+					<div class="strategy__field">主营业务:</div>
+					<div class="strategy__value">{{@data.mainBusiness | formatCode}}</div>
+				</div>
+				<div class="strategy__item clearfix">
+					<div class="strategy__field">经营区域:</div>
+					<div class="strategy__value">{{@data.coverage | formatCode}}</div>
+				</div>
+				<div class="strategy__item clearfix">
+					<div class="strategy__field">未来1-2年战略规划:</div>
+					<div class="strategy__value">{{@data.strategy | formatCode}}</div>
+				</div>
+				<div class="strategy__item clearfix">
+					<div class="strategy__field">主要金融需求:</div>
+					<div class="strategy__value">{{@data.financialDemand | formatCode}}</div>
+				</div>
+				<!--<div class="strategy__item clearfix">
+					<div class="strategy__field">与客户高层关系:</div>
+					<div class="strategy__value">{{@data.customerSeniorRelationship | formatCode}}</div>
+				</div>-->
+			</div>
+		</div>
+	</script>
+	<!--经营与战略form内容-->
+	<script type="text/html" id="strategy-form">
+		<div class="w2ui-page page-0">
+		    <div class="strategy-form clearfix">
+				<div class="w2ui-field">
+					<label>主营业务:</label>
+				   <div>
+						<textarea name="mainBusiness"></textarea>
+					</div>
+				</div>
+				<div class="w2ui-field">
+					<label>经营区域:</label>
+				   <div>
+						<textarea name="coverage"></textarea>
+					</div>
+				</div>
+				<div class="w2ui-field">
+					<label>未来1-2年战略规划:</label>
+				   <div>
+						<textarea name="strategy"></textarea>
+					</div>
+				</div>
+				<div class="w2ui-field">
+					<label>主要金融需求:</label>
+				   <div>
+						<textarea name="financialDemand"></textarea>
+					</div>
+				</div>
+				<!--<div class="w2ui-field">
+					<label>与客户高层关系:</label>
+				   <div>
+						<textarea name="customerSeniorRelationship"></textarea>
+					</div>
+				</div>-->
+			</div>
+		</div>
+		<div class="w2ui-buttons">
+		    <button class="button popup-btn button--primary" name="save">确定</button>
+		    <button class="button popup-btn button--cancel" name="reset">取消</button>
+		</div>
+	</script>
+	<!--与其他银行合作tab内容-->
+	<script type="text/html" id="other-banks-content">
+		<div class="client-chart-wrapper fl clearfix">
+			<div class="client-chart"></div>
+		</div>
+		<div class="client-other-banks-wrapper">
+			<div class="client-btn-wrapper clearfix">
+				<div class="client-btn-text-wrapper fl">
+					<div class="client-btn-text">单位:</div>
+					<div class="client-btn-text">(万元)</div>
+				</div>
+				<span class="client-modify-info" style="margin-left: 68px;"></span>
+				{{if data.roleId == 1}}
+				<div class="client-btn client-btn--new-bank">新增其他银行</div>
+				{{/if}}
+			</div>
+			<div class="client-tab-content clearfix client-tab-content--other-banks">
+				<div class="other-banks-table-wrapper" style="height: 100px;">
+					
+				</div>
+			</div>
+		</div>
+	</script>
+	<!--与其他银行合作弹框form内容-->
+	<script type="text/html" id="other-banks-form">
+		
+		<div class="w2ui-page page-0">
+			
+			<div class="other-banks-form-left clearfix">
+				<div class="w2ui-field">
+					<label>银行名称:</label>
+				   <div>
+						<input name="bankName" type="text"/>
+					</div>
+				</div>
+				<div class="w2ui-field">
+					<label>贷款:</label>
+				   <div>
+						<input name="loan" type="number"/>
+					</div>
+				</div>
+				<div class="w2ui-field">
+					<label>投资银行:</label>
+				   <div>
+						<input name="investmentBank" type="number"/>
+					</div>
+				</div>
+            </div>
+            
+            <div class="other-banks-form-right clearfix">
+				<div class="w2ui-field">
+					<label>存款:</label>
+				   <div>
+						<input name="deposit" type="number"/>
+					</div>
+				</div>
+				<div class="w2ui-field">
+					<label>交易银行:</label>
+				   <div>
+						<input name="tradingBank" type="number"/>
+					</div>
+				</div>
+				<div class="w2ui-field">
+					<label>公私联动:</label>
+				   <div>
+						<input name="publicPrivateLinkage" type="number"/>
+					</div>
+				</div>
+			</div>
+            
+        </div>
+        <div class="w2ui-buttons">
+            <button class="button popup-btn button--primary" name="save">确定</button>
+            <button class="button popup-btn button--cancel" name="reset">取消</button>
+        </div>
+	</script>
+	<!--在我行业务信息tab内容-->
+	<script type="text/html" id="we-bank-content">
+		<div class="client-btn-wrapper">
+			<div class="client-unit fl">单位:<span class="client-space"></span>(万元)</div>
+			{{if data.modifyUserName}}
+			<span class="client-modify-info">信息由{{data.modifyUserName}}更新于{{data.modifyDate}}</span>
+			{{/if}}
+		</div>
+		<div class="client-tab-content clearfix client-tab-content--we-bank">
+			<div class="we-bank-table-wrapper" style="height: 100px;">
+				
+			</div>
+		</div>
+	</script>
+	<!--提升计划tab内容-->
+	<script type="text/html" id="plan-content">
+		{{if !data.isPlaned}}
+		<div class="client-mask"></div>
+		<div class="client-no-plan-wrapper">
+			<div class="client-no-plan-container">
+				<div class="client-no-plan-text">
+					该客户还未创建账户规划
+				</div>
+				<!--<button class="button button--primary client-no-plan-btn">创建</button>-->
+			</div>
+		</div>
+		{{/if}}
+		
+		<div class="client-btn-wrapper clearfix">
+			<div class="client-btn-left">
+				<div class="client-text-btns" style="margin-left: 28px;">
+					{{if data.roleId == 6}}
+					<div class="client-btn--text client-btn--opinion">产品意见</div>
+					{{else if data.roleId == 7}}
+					<div class="client-btn--text client-btn--opinion">信审意见</div>
+					{{else}}
+					<div class="client-btn--text client-btn--opinion">审批意见</div>
+					{{/if}}
+					<div class="client-btn--text client-btn--diary">团队日志</div>
+				</div>
+			</div>
+			<span class="client-refuse-reason"></span>
+			<div class="client-btn-right fr">
+				<div class="client-btn-text-wrapper fl" style="margin-right: 22px;">
+					<div class="client-btn-text">审批状态:</div>
+					{{if data.planningStatus == 4}}
+					<div class="client-btn-text cib-text-alert" >{{data.planningStatusName}}</div>
+					{{else}}
+					<div class="client-btn-text" >{{data.planningStatusName}}</div>
+					{{/if}}
+					<!--{{if data.planningStatus == 0}}
+					<div class="client-btn-text" >未提交</div>
+					{{else if data.planningStatus == 1}}
+					<div class="client-btn-text" >已提交</div>
+					{{else if data.planningStatus == 2}}
+					<div class="client-btn-text" >团队审批</div>
+					{{else if data.planningStatus == 3}}
+					<div class="client-btn-text" >审批完成</div>
+					{{else if data.planningStatus == 4}}
+					<div class="client-btn-text cib-text-alert" >已拒绝</div>
+					{{else if data.planningStatus == 5}}
+					<div class="client-btn-text" >已完成</div>
+					{{/if}}-->
+				</div>
+				<!--客户经理未提交状态下显示提交按钮-->
+				{{if data.planningStatus == 0 && data.roleId == 1}}
+				<div class="client-btn client-btn--not-submit fl">提交</div>
+				<!--客户经理审批完成状态下显示编辑按钮-->
+				{{else if data.planningStatus == 3 && data.roleId == 1}}
+				<div class="client-btn client-btn--approved fl">编辑</div>
+				<!--客户经理已拒绝状态下显示提交按钮-->
+				{{else if data.planningStatus == 4 && data.roleId == 1}}
+				<div class="client-btn client-btn--refused fl">提交</div>
+				{{/if}}
+			</div>
+		</div>
+		<div class="client-tab-content clearfix client-tab-content--plan">
+			<!--上方的表格-->
+			<div class="plan-table-wrapper plan-table-wrapper--first" data-num="1" style="height: 100px;">
+			</div>
+			<!--客户经理未提交状态下显示添加按钮-->
+			{{if data.planningStatus == 0 && data.roleId == 1}}
+			<div class="client-btn--dotted" data-num="1">添加</div>
+			<!--客户经理审批完成状态下有添加按钮，但暂时隐藏-->
+			{{else if data.planningStatus == 3 && data.roleId == 1}}
+			<div class="client-btn--dotted" data-num="1" style="display: none;">添加</div>
+			<!--客户经理已拒绝状态下显示添加按钮-->
+			{{else if data.planningStatus == 4 && data.roleId == 1}}
+			<div class="client-btn--dotted" data-num="1">添加</div>
+			{{/if}}
+			
+			<!--下方的表格-->
+			<div class="plan-table-wrapper plan-table-wrapper--second" data-num="2" style="height: 100px;">
+			</div>
+			<!--客户经理未提交状态下显示添加按钮-->
+			{{if data.planningStatus == 0 && data.roleId == 1}}
+			<div class="client-btn--dotted" data-num="2">添加</div>
+			<!--客户经理审批完成状态下有添加按钮，但暂时隐藏-->
+			{{else if data.planningStatus == 3 && data.roleId == 1}}
+			<div class="client-btn--dotted" data-num="2" style="display: none;">添加</div>
+			<!--客户经理已拒绝状态下显示添加按钮-->
+			{{else if data.planningStatus == 4 && data.roleId == 1}}
+			<div class="client-btn--dotted" data-num="2">添加</div>
+			{{/if}}
+			{{if data.hasTask}}
+			<div class="form-wrapper--plan">
+			</div>
+			{{/if}}
+		</div>
+	</script>
+	<!--提升计划审批form内容-->
+	<script type="text/html" id="approve-form">
+		<div class="w2ui-page page-0">
+			
+			<div class="plan-form clearfix">
+				<div class="w2ui-field">
+					<label>审批意见:</label>
+				   <div>
+						<textarea name="content" type="text"/>
+					</div>
+				</div>
+				<div class="w2ui-field">
+					<label></label>
+				    <div class="form-item__content">
+				    	<label for="client-agree" class="checkbox">
+				    		<span class="checkbox__input">
+				    			<input type="checkbox" id="client-agree" value="">
+				    		</span>
+				    		<span class="checkbox__label">基本同意此方案，可进行下一步</span>
+				    	</label>
+					</div>
+				</div>
+            </div>
+        </div>
+        <div class="w2ui-buttons" style="text-align: center;">
+            <button class="button popup-btn button--primary is-disabled" name="save" disabled="disabled">同意</button>
+            <button class="button popup-btn button--cancel" name="reset">拒绝</button>
+        </div>
+	</script>
+	<!--提升计划审批意见内容-->
+	<script type="text/html" id="records">
+		{{each data}}
+		<div class="record-one">
+			<div class="record__title clearfix">
+				<div class="record__name">{{$value.roleName == null ? "" : $value.roleName}}&nbsp;&nbsp;{{$value.approverName}} </div>
+				<div class="record__time">{{$value.approvalTime == "" ? "" : ($value.approvalTime == null ? "" : $value.approvalTime)}}</div>
+			</div>
+			<div class="record__content">
+				{{@$value.content | formatCode}}
+			</div>
+		</div>
+		{{/each}}
+	</script>
+	<!--提升计划团队日志内容-->
+	<script type="text/html" id="records-diary">
+		{{each data}}
+		<div class="record-one">
+			<div class="record__title clearfix">
+				<div class="record__name">{{$value.roleName == null ? "" : $value.roleName}}&nbsp;&nbsp;{{$value.logCreatorName}} </div>
+				<div class="record__time">{{$value.logTime == "" ? "" : ($value.logTime == null ? "" : $value.logTime)}}</div>
+			</div>
+			<div class="record__content">
+				{{@$value.logContent | formatCode}}
+			</div>
+		</div>
+		{{/each}}
+	</script>
+	<!--提升计划团队日志form内容-->
+	<script type="text/html" id="plan-form">
+		<div class="w2ui-page page-0">
+		    <div class="plan-form clearfix">
+				<div class="w2ui-field">
+					<label>历史日志:</label>
+				    <div class="jc-records client-records--diary">
+					</div>
+				</div>
+				{{if data.roleId == 1 || data.roleId == 6 || data.roleId == 7}}
+				<div class="w2ui-field">
+					<label>新增日志:</label>
+				    <div>
+						<textarea name="logContent"></textarea>
+					</div>
+				</div>
+				{{/if}}
+			</div>
+		</div>
+		<div class="w2ui-buttons">
+			{{if data.roleId == 1 || data.roleId == 6 || data.roleId == 7}}
+		    <button class="button popup-btn button--primary" name="save">确定</button>
+		    <button class="button popup-btn button--cancel" name="reset">取消</button>
+		    {{else}}
+		    <button class="button popup-btn button--primary" name="reset">确定</button>
+		    {{/if}}
+		</div>
+	</script>
+	<!--提升计划团队日志只显示内容-->
+	<!--<script type="text/html" id="plan-box">
+		<div class="w2ui-page page-0">
+		    <div class="plan-form clearfix">
+				<div class="w2ui-field">
+					<label>历史日志:</label>
+				    <div class="jc-records client-records--diary">
+					</div>
+				</div>
+			</div>
+		</div>
+	</script>-->
+	<!--线索清单tab内容-->
+	<script type="text/html" id="clue-content">
+		<div class="client-tab-content client-tab-content--clue clearfix">
+			<div id="top-filter-wrap">
+				<div class="top-filter">
+					<div class="client-filter-wrapper">
+						<ul class="filter-wrap clearfix"></ul>
+					</div>
+					
+					<div class="clearfix"></div>
+					<div class="client-clue-wrapper">
+						<ul class="clue-wrap clearfix"></ul>
+					</div>
+					<div class="clearfix"></div>
+					<div id="myGrid" class="no-border-grid custom-grid no-text-overflow-grid"></div>
+				</div>
+			</div>
+		</div>
+		
+	</script>
+	<script type="text/html" id="filter-item">
+		{{each data items i}}
+			{{if i == (data.length - 1)}}
+			<li class="filter-item last-filter" data-configValue="{{items.configValue}}"><div class="item-inner-wrap">{{items.configName}}</div></li>
+			{{else}}
+			<li class="filter-item" data-configValue="{{items.configValue}}"><div class="item-inner-wrap">{{items.configName}}</div></li>
+			{{/if}}
+		{{/each}}
+	</script>
+	<script type="text/html" id="clue-item">
+		{{each data items i}}
+			{{if items.trackCount == 0}}
+			<li class="clue-item" style="visibility: hidden;">
+			{{else}}
+			<li class="clue-item">
+			{{/if}}
+				<div class="clue-num">{{items.amount}}万/{{items.trackCount}}</div>
+			</li>
+		{{/each}}
+	</script>
+	
+	<!--查看线索内容-->
+	<script type="text/html" id="records-clue">
+		{{each data}}
+		<div class="record-one">
+			<div class="record__title clearfix">
+				<div class="record__name">{{$value.modifyUser}} </div>
+				<div class="record__time">{{$value.createTime == "" ? "" : ($value.createTime == null ? "" : $value.createTime)}}</div>
+			</div>
+			<div class="record__content">
+				{{@$value.remark | formatCode}}
+			</div>
+		</div>
+		{{/each}}
+	</script>	
+	<!--线索清单弹框内容-->
+	<script type="text/html" id="backup-box">
+		<div class="w2ui-page page-0">
+		    <div class="clue-form">
+				<div class="w2ui-field">
+					<label>备注:</label>
+				   	<div class="jc-records client-records--clue">
+					</div>
+				</div>
+			</div>
+		</div>
+	</script>
+	<!-- 业务信息 -->
+	<script type="text/html" id="client-business">
+		<div class="busiess-wrap">
+			<div class="business-left">
+				<div class="top-chart" id="size-chart"></div>
+				<div class="bottom-chart" id="state-chart"></div>
+			</div>
+			<div class="business-right">
+				<div class="top-chart" id="income-chart"></div>
+				<div class="bottom-chart" id="product-chart">
+					<h4>产品</h4>
+					<div id="productGrid"></div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</script>
+</body>
+</html>
+
+
+
+
+	
+	
+
+	

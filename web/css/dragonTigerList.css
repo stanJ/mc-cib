@@ -1,0 +1,180 @@
+#right-main-content{
+	overflow: auto;
+}
+#subsidiary,
+#branch{
+	display: none;
+}
+.select2-results__option{
+	padding: 15px 6px;
+}
+.doubel-selects{
+	display: inline-block;
+	width: 299px;
+}
+.top-select .start-date-box{
+	float: left;
+	height: 100%;
+	width: 45%;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+.top-select .end-date-box{
+	float: right;
+	height: 100%;
+	width: 45%;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+.top-btn-wrap{
+	display: inline-block;
+	margin-left: 20px;
+	padding: 0 10px;
+	height: 44px;
+	line-height: 44px;
+	background: rgb(255,255,255);
+	border-radius: 6px;
+	cursor: pointer;
+	user-select:none;
+}
+.top-btn-selected{
+	background: rgb(71,118,199);
+	color: rgb(255,255,255);
+}
+.middle-line{
+	position: relative;
+	float: left;
+	width: 29px;
+	height: 100%;
+	line-height: 40px;
+	text-align: center;
+	background: #fff;
+	font-size: 40px;
+	color: rgba(0,0,0,0.2);
+}
+.middle-line:before{
+	position: absolute;
+	display: block;
+	top: 50%;
+	left: 50%;
+	margin-left: -25%;
+	content: "";
+	height: 2px;
+	width: 50%;
+	border: 1px solid rgb(210,210,210);
+}
+#startDate,
+#endDate{
+	width: 100%;
+	height: 44px;
+	line-height: 44px;
+	border: 0 none;
+	text-align: center;
+}
+.up-grid-wrap{
+	width: 100%;
+	padding: 20px;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+#upGrid{
+	height: 300px;
+	border: 1px solid rgba(0,0,0,0.2);
+}
+#upGrid .w2ui-grid-body table .w2ui-head{
+	border-right: 1px solid rgba(0,0,0,0.1);
+}
+#upGrid .w2ui-grid-body table .w2ui-head{
+	background-color: rgb(247,248,250);
+}
+#upGrid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-even,
+#upGrid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-even{
+	background-color: rgb(255,255,255);
+}
+#upGrid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-odd:hover,
+#upGrid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-even:hover,
+#upGrid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-odd.w2ui-record-hover,
+#upGrid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-even.w2ui-record-hover{
+	background-color: rgb(255,255,255);
+}
+.w2ui-grid .w2ui-grid-body table td.w2ui-grid-data > div{
+	font-size: 14px;
+}
+#upGrid .w2ui-grid-body table td.w2ui-grid-data{
+	border-top: 1px solid rgba(0,0,0,0.1);
+	border-right: 1px solid rgba(0,0,0,0.1);
+}
+#upGrid .w2ui-grid-body table td.w2ui-grid-data:nth-child(2){
+	background-color: rgb(247,248,250);
+}
+#line-filter{
+	padding-left: 20px;
+}
+#line-filter .tab-filter-title{
+	cursor: default;
+}
+#line-filter .tab-filter-selected{
+	font-weight: bold;
+	color: rgb(30,30,30);
+}
+.right-create{
+	position: relative;
+	float: right;
+	padding-right: 20px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 16px;
+	color: rgb(74,94,137);
+	cursor: pointer;
+}
+.right-create:before{
+	content: "+";
+	height: 50px;
+	font-size: 20px;
+	line-height: 50px;
+	color: rgb(74,94,137);
+}
+#myGrid{
+	overflow: hidden;
+}
+
+/* w2ui */
+.custom-grid{
+    border: 0 none;
+}
+.w2ui-grid-body table .w2ui-head{
+    border: 0 none;
+}
+.w2ui-grid .w2ui-grid-body table td{
+    border: 0 none;
+}
+.w2ui-grid .w2ui-grid-body .w2ui-grid-columns, .w2ui-grid .w2ui-grid-body .w2ui-grid-fcolumns{
+	box-shadow: none;
+}
+.w2ui-grid .w2ui-grid-body table .w2ui-head{
+	height: 50px;
+	border: 0 none;
+	background: rgb(240,240,240);
+}
+.w2ui-grid .w2ui-grid-body table .w2ui-head > div{
+	font-size: 14px;
+	text-align: center;
+}
+.w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-odd{
+	height: 50px;
+}
+.w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-even, .w2ui-grid .w2ui-grid-body .w2ui-grid-frecords table tr.w2ui-even{
+	background: rgb(247,248,250);
+}
+.redirect-uri{
+	cursor: pointer;
+	font-size: 14px;
+}
+.green_text{
+	color: #2FA65B;
+}
+.edit_text{
+	color: #4776C7;
+}
+.red_text{
+	color: #E14546;
+}

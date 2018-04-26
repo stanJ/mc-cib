@@ -1,0 +1,66 @@
+<!DOCTYPE>
+<html > <!-- 遵循W3C规范 具体去看一下百度百科-->
+<head>
+    <title>CIB</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"> <!-- 规范网页编码格式UTF-8 -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Expires" CONTENT="0"> 
+</head>
+<body>
+	<script src="../js/base.js" type="text/javascript" charset="utf-8" id="seajsnode"></script>
+	<div id="wrap">
+		<div id="right-content">
+			<h1 class="page-name">分支行年度目标</h1>
+			<div id="right-main-content" class="bg-white">
+				<ul>
+					<li>
+						<div class="point-btn">综合得分权重</div>
+					</li>
+					<li>
+						<div class="traffic-btn">红绿灯设置</div>
+					</li>
+				</ul>
+				<div id="myGrid"></div>
+			</div>
+			<div id="point-grid" class='popup-grid'></div>
+			<div id="traffic-grid" class='popup-grid'>
+				<div class="yellow-wrap">
+					<h4 class="opt-title">黄灯设置</h4>
+					<ul class="yellow-light">
+						<li class="up-opt">
+							<label>百分比上限:</label>
+							<input class="yellow-up-input">
+						</li>
+						<li class="down-opt">
+							<label>百分比下限:</label>
+							<input class="yellow-down-input">
+						</li>						
+					</ul>
+				</div>
+				<div class="red-green">
+					<ul class="red-green-light">
+						<li class="green-down">
+							<h4 class="opt-title">绿灯</h4>
+							<label>百分比下限:</label>
+							<input type="text" disabled="disabled" />
+						</li>
+						<li class="red-up">
+							<h4 class="opt-title">红灯</h4>
+							<label>百分比上限:</label>
+							<input type="text" disabled="disabled" />
+						</li>
+					</ul>
+				</div>
+				<div class="btn-wrap">
+					<div class="btn-confirm">确定</div>
+					<div class="btn-cancel">取消</div>
+				</div>
+			</div>
+		</div>		
+	</div>
+</body>
+</html>

@@ -1,0 +1,973 @@
+<!DOCTYPE>
+<html > <!-- 遵循W3C规范 具体去看一下百度百科-->
+<head>
+    <title>CIB</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"> <!-- 规范网页编码格式UTF-8 -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Expires" CONTENT="0"> 
+</head>
+<body>
+	<script src="../js/base.js" type="text/javascript" charset="utf-8" id="seajsnode"></script>
+	<div id="wrap">
+		<div id="right-content">
+			<!--客户经理首页-->
+			<div id="custom-manager" class="homepage-content">
+				<div class="homepage-header__title clearfix" style="width:100%;">
+					<div class="homepage-title-wrapper fl">
+						<div class="homepage-title">首页</div>
+						<div class="homepage-refresh-date"></div>
+					</div>
+					<div class="top-search">
+						<div class="right-search-box">
+							<select id="search-input" class="search-input"/></select>
+							<!-- <input type="" class="search-input" id="search-input" placeholder="关键字:客户,集团、行业"> -->
+						</div>
+						<div class="search-btn">
+							搜索
+						</div>
+					</div>
+				</div>
+				<div class="wrap-content clearfix">
+					<div class="left-table-wrap">
+						<div class="up-wrap">
+							<div class="border-title blue-title">客户看板</div>
+							<div id="myGrid" class="no-border-grid custom-grid"></div>
+						</div>
+						<div class="down-wrap">
+							<div class="border-title green-title">线索备忘</div>
+							<div id="tradeGrid" class="no-border-grid custom-grid"></div>
+						</div>
+					</div>
+					<div class="right-list-wrap">
+						<div class="border-title yellow-title">行动看板</div>
+							<div class="right-inner-wrap">
+								<h5 class="inner-title">账户规划</h5>
+								<div class="inner-box list-box1">
+									<span class="inner-count red-text">0</span>
+									<span class="inner-count-title">条已拒绝</span>
+									<ul class="inner-ul"></ul>
+								</div>
+								<div class="inner-box list-box2">
+									<span class="inner-count yellow-text">0</span>
+									<span class="inner-count-title">条未提交</span>
+									<ul class="inner-ul"></ul>
+								</div>
+								<h5 class="inner-title" style="margin-top: 10px;">销售线索</h5>
+								<div class="inner-box list-box3">
+									<span class="inner-count red-text">0</span>
+									<span class="inner-count-title">条销售线索预警</span>
+									<ul class="inner-ul"></ul>
+								</div>
+								<div class="inner-box list-box4">
+									<span class="inner-count gray-text">0</span>
+									<span class="inner-count-title">条长期未更新线索</span>
+									<ul class="inner-ul"></ul>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+					</div>
+				</div>
+			</div>
+			<!--支行行长首页-->
+			<div id="sub-branch-president" class="homepage-content">
+				<div class="homepage-right fr">
+					<div class="top-search top-search--sub-branch">
+						<div class="right-search-box">
+							<select class="search-input search-input--sub-branch"/></select>
+						</div>
+						<div class="search-btn">
+							搜索
+						</div>
+					</div>
+					<div class="homepage-block sub-branch-board--action">
+						<div class="border-title yellow-title">行动看板</div>
+						<div class="homepage-block__main homepage-block__main--padding">
+							<div class="homepage-action">
+								<div class="homepage-action__title">账户规划</div>
+								<div class="homepage-action__summary homepage-action__summary--approval">
+									<div class="homepage-action__summary-num homepage-action__summary-num--approval yellow-text"></div>
+									<div class="homepage-action__summary-text">条团队审核(等待行长审核)</div>
+								</div>
+								<div class="homepage-action__main homepage-action__main--approval">
+								</div>
+							</div>
+							<div class="homepage-action" style="margin-top: 20px;">
+								<div class="homepage-action__title">销售线索</div>
+								<div class="homepage-action__summary">
+									<div class="homepage-action__summary-num homepage-action__summary-num--sale-alert red-text"></div>
+									<div class="homepage-action__summary-text">条销售线索预警</div>
+								</div>
+								<div class="homepage-action__main homepage-action__main--sale-alert">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="homepage-left">
+					<div class="homepage-title-wrapper">
+						<div class="homepage-title">首页</div>
+						<div class="homepage-refresh-date"></div>
+					</div>
+					<div class="homepage-block sub-branch-board--performance">
+						<div class="border-title blue-title">
+							<span>业绩看板</span>
+							<div class="sub-branch-input-wrapper">
+								<input type="list" class="sub-branch-input"/>
+							</div>
+							<div class="score-rank-wrapper">
+								<!--银行排名-->
+							</div>
+						</div>
+						<div class="homepage-block__main homepage-block__main--padding">
+							<div class="sub-branch-legends-wrapper">
+								<div class="sub-branch-legends-left fl">
+								</div>
+								<div class="sub-branch-legends-right fr">
+									<div class="score-legend-title">序时目标</div>
+									<div class="mck-legend">
+										<div class="mck-legend__icon mck-legend__icon--green"></div>
+										<div class="mck-legend__text">时间进度正常</div>
+									</div>
+									<div class="mck-legend">
+										<div class="mck-legend__icon mck-legend__icon--yellow"></div>
+										<div class="mck-legend__text">时间进度存在风险</div>
+									</div>
+									<div class="mck-legend">
+										<div class="mck-legend__icon mck-legend__icon--red"></div>
+										<div class="mck-legend__text">时间进度滞后</div>
+									</div>
+								</div>
+								
+							</div>
+							
+							<div class="score-wrapper score-wrapper--sub-branch">
+								<div class="score-pad-wrapper clearfix">
+									<div class="score-pad score-pad--left">
+										<div class="score-pad__content">
+											过程指标
+										</div>
+									</div>
+									<div class="score-pad score-pad--right">
+										<div class="score-pad__content">
+											结果指标
+										</div>
+									</div>
+								</div>
+								<div class="score-table-wrapper clearfix">
+									<div class="score-table__title">支行业绩看板</div>
+									<div class="score-table-container">
+										<!--支行业绩表格-->
+										<table class="mck-table score-table score-table--sub-branch">
+										</table>
+									</div>
+								</div>
+							
+								<div class="score-table-wrapper clearfix" style="margin-top: 20px;">
+									<div class="score-table__title">客户经理看板</div>
+									<div class="score-table-container">
+										<table class="mck-table score-table score-table--manager">
+										
+										</table>
+									</div>
+								</div>
+							
+							</div>
+							
+						</div>
+					</div>
+					<div class="homepage-block sub-branch-board--customer">
+						<div class="border-title blue-title">客户看板</div>
+						<div class="homepage-block__main">
+							<div class="homepage-grid sub-branch-grid--customer" style="height: 484px;"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--分行行长首页-->
+			<div id="branch-president" class="homepage-content">
+				<div class="homepage-header">
+					<div class="homepage-header__title fl">
+						<div class="homepage-title-wrapper">
+							<div class="homepage-title">首页</div>
+							<div class="homepage-refresh-date">数据截止日期2017年12月14日</div>
+						</div>
+					</div>
+					<div class="homepage-header__search fr">
+						<div class="top-search">
+							<div class="right-search-box">
+								<select class="search-input search-input--sub-branch"/></select>
+							</div>
+							<div class="search-btn">
+								搜索
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix">
+					<div class="homepage-half homepage-half--left">
+						<div class="homepage-block sub-branch-board--performance">
+							<div class="border-title blue-title">
+								<span>业绩看板</span>
+							</div>
+							<div class="homepage-block__main homepage-block__main--padding" style="height: 616px;overflow-y: auto;padding-top: 0;">
+								
+								<div class="sub-branch-table-performance-wrapper">
+									<div class="sub-branch-table-performance-bg"></div>
+									<table class="mck-table sub-branch-table-performance">
+										<colgroup>
+											<col width="180">
+											<col width="">
+											<col width="120">
+											<col width="100">
+										</colgroup>
+										<tr class="mck-table__header">
+											<th class="mck-table-th">
+												<div class="mck-cell" style="text-align: left;">比年末新增:</div>
+											</th>
+											<th class="mck-table-th">
+												<div class="mck-cell"></div>
+											</th>
+											<th class="mck-table-th">
+												<div class="mck-cell">全年目标</div>
+											</th>
+											<th class="mck-table-th">
+												<div class="mck-cell">完成度</div>
+											</th>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="homepage-half homepage-half--right">
+						<div class="homepage-block branch-board--sub-branch">
+							<div class="border-title green-title">
+								<span>支行看板</span>
+							</div>
+							<div class="homepage-block__main" style="height: 616px;">
+								
+								<!--<div class="sub-branch-legends-wrapper sub-branch-legends-wrapper--branch clearfix" style="display: none;">
+									<div class="sub-branch-legends-left fl">
+										<div class="mck-legend" style="margin-left: 0;">
+											<div class="mck-legend__icon mck-legend__icon--blue3"></div>
+											<div class="mck-legend__text">10月份</div>
+										</div>
+										<div class="mck-legend">
+											<div class="mck-legend__icon mck-legend__icon--blue2"></div>
+											<div class="mck-legend__text">11月份</div>
+										</div>
+										<div class="mck-legend">
+											<div class="mck-legend__icon mck-legend__icon--blue1"></div>
+											<div class="mck-legend__text">12月份</div>
+										</div>
+									</div>
+									<div class="sub-branch-legends-right fr">
+										<div class="mck-legend">
+											<div class="mck-legend__icon mck-legend__icon--green"></div>
+											<div class="mck-legend__text">时间进度正常</div>
+										</div>
+										<div class="mck-legend">
+											<div class="mck-legend__icon mck-legend__icon--yellow"></div>
+											<div class="mck-legend__text">时间进度存在风险</div>
+										</div>
+										<div class="mck-legend">
+											<div class="mck-legend__icon mck-legend__icon--red"></div>
+											<div class="mck-legend__text">时间进度滞后</div>
+										</div>
+									</div>
+								</div>-->
+								<div class="homepage-grid branch-grid--sub-branch" style="height: 574px;">
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="sub-branch-legends-wrapper sub-branch-legends-wrapper--bottom">
+					<div class="sub-branch-legends-left fl">
+					</div>
+					<div class="sub-branch-legends-right fr">
+						<div class="mck-legend">
+							<div class="mck-legend__icon mck-legend__icon--green"></div>
+							<div class="mck-legend__text">时间进度正常</div>
+						</div>
+						<div class="mck-legend">
+							<div class="mck-legend__icon mck-legend__icon--yellow"></div>
+							<div class="mck-legend__text">时间进度存在风险</div>
+						</div>
+						<div class="mck-legend">
+							<div class="mck-legend__icon mck-legend__icon--red"></div>
+							<div class="mck-legend__text">时间进度滞后</div>
+						</div>
+					</div>
+				</div>
+				<div class="homepage-block branch-board--customer" style="margin-top: 40px;">
+					<div class="border-title yellow-title">客户看板</div>
+					<div class="homepage-block__main">
+						<div class="homepage-grid branch-grid--customer" style="height: 484px;"></div>
+					</div>
+				</div>
+			</div>
+			<!--总行行长首页-->
+			<div id="head-office-president" class="homepage-content">
+				<div class="homepage-header">
+					<div class="homepage-header__title fl">
+						<div class="homepage-title-wrapper">
+							<div class="homepage-title">首页</div>
+							<div class="homepage-refresh-date">数据截止日期2017年12月14日</div>
+						</div>
+					</div>
+					<div class="homepage-header__search fr">
+						<div class="top-search">
+							<div class="right-search-box">
+								<select class="search-input search-input--sub-branch"/></select>
+							</div>
+							<div class="search-btn">
+								搜索
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix">
+					<div class="homepage-half homepage-half--left">
+						<div class="homepage-block sub-branch-board--performance">
+							<div class="border-title blue-title">
+								<span>业绩看板</span>
+							</div>
+							<div class="homepage-block__main homepage-block__main--padding" style="height: 616px;overflow-y: auto;padding-top: 0;">
+								<div class="sub-branch-table-performance-wrapper">
+									<div class="sub-branch-table-performance-bg"></div>
+									<table class="mck-table sub-branch-table-performance">
+										<colgroup>
+											<col width="180">
+											<col width="">
+											<col width="120">
+											<col width="100">
+										</colgroup>
+										<tr class="mck-table__header">
+											<th class="mck-table-th">
+												<div class="mck-cell" style="text-align: left;">比年末新增:</div>
+											</th>
+											<th class="mck-table-th">
+												<div class="mck-cell"></div>
+											</th>
+											<th class="mck-table-th">
+												<div class="mck-cell">全年目标</div>
+											</th>
+											<th class="mck-table-th">
+												<div class="mck-cell">完成度</div>
+											</th>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="homepage-half homepage-half--right">
+						<div class="homepage-block branch-board--sub-branch">
+							<div class="border-title green-title">
+								<span>分行看板</span>
+							</div>
+							<div class="homepage-block__main" style="height: 616px;">
+								
+								<!--<div class="sub-branch-legends-wrapper sub-branch-legends-wrapper--branch clearfix" style="display: none;">
+									<div class="sub-branch-legends-left fl">
+										<div class="mck-legend" style="margin-left: 0;">
+											<div class="mck-legend__icon mck-legend__icon--blue3"></div>
+											<div class="mck-legend__text">10月份</div>
+										</div>
+										<div class="mck-legend">
+											<div class="mck-legend__icon mck-legend__icon--blue2"></div>
+											<div class="mck-legend__text">11月份</div>
+										</div>
+										<div class="mck-legend">
+											<div class="mck-legend__icon mck-legend__icon--blue1"></div>
+											<div class="mck-legend__text">12月份</div>
+										</div>
+									</div>
+									<div class="sub-branch-legends-right fr">
+										<div class="mck-legend">
+											<div class="mck-legend__icon mck-legend__icon--green"></div>
+											<div class="mck-legend__text">时间进度正常</div>
+										</div>
+										<div class="mck-legend">
+											<div class="mck-legend__icon mck-legend__icon--yellow"></div>
+											<div class="mck-legend__text">时间进度存在风险</div>
+										</div>
+										<div class="mck-legend">
+											<div class="mck-legend__icon mck-legend__icon--red"></div>
+											<div class="mck-legend__text">时间进度滞后</div>
+										</div>
+									</div>
+								</div>-->
+								<div class="homepage-grid branch-grid--sub-branch" style="height: 574px;">
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="sub-branch-legends-wrapper sub-branch-legends-wrapper--bottom">
+					<div class="sub-branch-legends-left fl">
+					</div>
+					<div class="sub-branch-legends-right fr">
+						<div class="mck-legend">
+							<div class="mck-legend__icon mck-legend__icon--green"></div>
+							<div class="mck-legend__text">时间进度正常</div>
+						</div>
+						<div class="mck-legend">
+							<div class="mck-legend__icon mck-legend__icon--yellow"></div>
+							<div class="mck-legend__text">时间进度存在风险</div>
+						</div>
+						<div class="mck-legend">
+							<div class="mck-legend__icon mck-legend__icon--red"></div>
+							<div class="mck-legend__text">时间进度滞后</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		
+		</div>		
+	</div>
+	<script type="text/html" id="bank-rank">
+		本月得分<span class="score-rank__value">{{data.score | getInt}}</span>,排名<span class="score-rank__value">{{data.seqNo}}</span>名,较上月提升<span class="score-rank__value">{{data.seqNoInv}}</span>名
+	</script>
+	<!--支行下客户经理业绩查看-->
+	<script type="text/html" id="manager-score-table">
+		{{set managerBestData = data.managerBestData}}
+		<tr class="mck-table__header">
+			<th class="mck-table-th" style="width: 9%;">
+				<div class="mck-cell">同组最佳<br>客户经理</div>
+			</th>
+			<th class="mck-table-th">
+				<div class="mck-cell">{{managerBestData.validRate | rateSpecial}}</div>
+			</th>
+			<th class="mck-table-th">
+				<div class="mck-cell">{{managerBestData.strategicRate | rateSpecial}}</div>
+			</th>
+			<th class="mck-table-th">
+				<div class="mck-cell">{{managerBestData.ebankRate | rateSpecial}}</div>
+			</th>
+			<th class="mck-table-th">
+				<div class="mck-cell">{{managerBestData.planingRate | rateSpecial}}</div>
+			</th>
+			<th class="mck-table-th">
+				<div class="mck-cell">{{managerBestData.depositDailyR | rateSpecial}}</div>
+			</th>
+			<th class="mck-table-th">
+				<div class="mck-cell">{{managerBestData.loanDailyRate | rateSpecial}}</div>
+			</th>
+			<th class="mck-table-th">
+				<div class="mck-cell">{{managerBestData.netIncomeRate | rateSpecial}}</div>
+			</th>
+			<th class="mck-table-th">
+				<div class="mck-cell">{{managerBestData.amountInvRate | rateSpecial}}</div>
+			</th>
+			<th class="mck-table-th">
+				<div class="mck-cell">{{managerBestData.amountBizRate | rateSpecial}}</div>
+			</th>
+		</tr>
+		{{each data.managerData}}
+		<tr class="mck-table__row mck-table__row--first">
+			<td class="mck-table-td">
+				<div class="mck-cell mck-cell--manager"></div>
+			</td> 
+			<td class="mck-table-td">
+				<div class="mck-cell">
+					<div class="manager-chart-wrapper clearfix">
+						{{if $value.target.activeAccount === 0}}
+						<div class="manager-chart-signal manager-chart-signal--red"></div>
+						{{else if $value.target.activeAccount == 1}}
+						<div class="manager-chart-signal manager-chart-signal--yellow"></div>
+						{{else if $value.target.activeAccount == 2}}
+						<div class="manager-chart-signal manager-chart-signal--green"></div>
+						{{/if}}
+						<div class="manager-chart"></div>
+					</div>
+				</div>
+			</td>
+			<td class="mck-table-td">
+				<div class="mck-cell">
+					<div class="manager-chart-wrapper clearfix">
+						{{if $value.target.strategicAccount === 0}}
+						<div class="manager-chart-signal manager-chart-signal--red"></div>
+						{{else if $value.target.strategicAccount == 1}}
+						<div class="manager-chart-signal manager-chart-signal--yellow"></div>
+						{{else if $value.target.strategicAccount == 2}}
+						<div class="manager-chart-signal manager-chart-signal--green"></div>
+						{{/if}}
+						<div class="manager-chart"></div>
+					</div>
+				</div>
+			</td>
+			<td class="mck-table-td">
+				<div class="mck-cell">
+					<div class="manager-chart-wrapper clearfix">
+						{{if $value.target.ebankAccount === 0}}
+						<div class="manager-chart-signal manager-chart-signal--red"></div>
+						{{else if $value.target.ebankAccount == 1}}
+						<div class="manager-chart-signal manager-chart-signal--yellow"></div>
+						{{else if $value.target.ebankAccount == 2}}
+						<div class="manager-chart-signal manager-chart-signal--green"></div>
+						{{/if}}
+						<div class="manager-chart"></div>
+					</div>
+				</div>
+			</td>
+			<td class="mck-table-td">
+				<div class="mck-cell">
+					<div class="manager-chart-wrapper clearfix">
+						{{if $value.target.planingAccount === 0}}
+						<div class="manager-chart-signal manager-chart-signal--red"></div>
+						{{else if $value.target.planingAccount == 1}}
+						<div class="manager-chart-signal manager-chart-signal--yellow"></div>
+						{{else if $value.target.planingAccount == 2}}
+						<div class="manager-chart-signal manager-chart-signal--green"></div>
+						{{/if}}
+						<div class="manager-chart"></div>
+					</div>
+				</div>
+			</td>
+			<td class="mck-table-td">
+				<div class="mck-cell">
+					<div class="manager-chart-wrapper clearfix">
+						{{if $value.target.deposit === 0}}
+						<div class="manager-chart-signal manager-chart-signal--red"></div>
+						{{else if $value.target.deposit == 1}}
+						<div class="manager-chart-signal manager-chart-signal--yellow"></div>
+						{{else if $value.target.deposit == 2}}
+						<div class="manager-chart-signal manager-chart-signal--green"></div>
+						{{/if}}
+						<div class="manager-chart"></div>
+					</div>
+				</div>
+			</td>
+			<td class="mck-table-td">
+				<div class="mck-cell">
+					<div class="manager-chart-wrapper clearfix">
+						{{if $value.target.loan === 0}}
+						<div class="manager-chart-signal manager-chart-signal--red"></div>
+						{{else if $value.target.loan == 1}}
+						<div class="manager-chart-signal manager-chart-signal--yellow"></div>
+						{{else if $value.target.loan == 2}}
+						<div class="manager-chart-signal manager-chart-signal--green"></div>
+						{{/if}}
+						<div class="manager-chart"></div>
+					</div>
+				</div>
+			</td>
+			<td class="mck-table-td">
+				<div class="mck-cell">
+					<div class="manager-chart-wrapper clearfix">
+						{{if $value.target.netIncome === 0}}
+						<div class="manager-chart-signal manager-chart-signal--red"></div>
+						{{else if $value.target.netIncome == 1}}
+						<div class="manager-chart-signal manager-chart-signal--yellow"></div>
+						{{else if $value.target.netIncome == 2}}
+						<div class="manager-chart-signal manager-chart-signal--green"></div>
+						{{/if}}
+						<div class="manager-chart"></div>
+					</div>
+				</div>
+			</td>
+			<td class="mck-table-td">
+				<div class="mck-cell">
+					<div class="manager-chart-wrapper clearfix">
+						{{if $value.target.investmentBankProducts === 0}}
+						<div class="manager-chart-signal manager-chart-signal--red"></div>
+						{{else if $value.target.investmentBankProducts == 1}}
+						<div class="manager-chart-signal manager-chart-signal--yellow"></div>
+						{{else if $value.target.investmentBankProducts == 2}}
+						<div class="manager-chart-signal manager-chart-signal--green"></div>
+						{{/if}}
+						<div class="manager-chart"></div>
+					</div>
+				</div>
+			</td>
+			<td class="mck-table-td">
+				<div class="mck-cell">
+					<div class="manager-chart-wrapper clearfix">
+						{{if $value.target.tradingBankProducts === 0}}
+						<div class="manager-chart-signal manager-chart-signal--red"></div>
+						{{else if $value.target.tradingBankProducts == 1}}
+						<div class="manager-chart-signal manager-chart-signal--yellow"></div>
+						{{else if $value.target.tradingBankProducts == 2}}
+						<div class="manager-chart-signal manager-chart-signal--green"></div>
+						{{/if}}
+						<div class="manager-chart"></div>
+					</div>
+				</div>
+			</td>
+			
+		</tr>
+		{{/each}}
+	</script>
+	<!--支行行长不同支行业绩查看-->
+	<script type="text/html" id="bank-score-table">
+		{{set bankBestData = data.bankBestData}}
+		{{set yearlyPlanning = data.bankData.yearlyPlanning}}
+		{{set minLine = data.bankData.minLine}}
+		{{set maxLine = data.bankData.maxLine}}
+		<tr class="mck-table__header">
+			<th class="mck-table-th" style="width: 9%;">
+				<div class="mck-cell">同组当月<br>最佳完成率</div>
+			</th>
+			<th class="mck-table-th">
+				<div class="mck-cell">{{bankBestData.validRate | rateSpecial}}</div>
+			</th>
+			<th class="mck-table-th">
+				<div class="mck-cell">{{bankBestData.strategicRate | rateSpecial}}</div>
+			</th>
+			<th class="mck-table-th">
+				<div class="mck-cell">{{bankBestData.ebankRate | rateSpecial}}</div>
+			</th>
+			<th class="mck-table-th">
+				<div class="mck-cell">{{bankBestData.planingRate | rateSpecial}}</div>
+			</th>
+			<th class="mck-table-th">
+				<div class="mck-cell">{{bankBestData.depositDailyR | rateSpecial}}</div>
+			</th>
+			<th class="mck-table-th">
+				<div class="mck-cell">{{bankBestData.loanDailyRate | rateSpecial}}</div>
+			</th>
+			<th class="mck-table-th">
+				<div class="mck-cell">{{bankBestData.netIncomeRate | rateSpecial}}</div>
+			</th>
+			<th class="mck-table-th">
+				<div class="mck-cell">{{bankBestData.amountInvRate | rateSpecial}}</div>
+			</th>
+			<th class="mck-table-th">
+				<div class="mck-cell">{{bankBestData.amountBizRate | rateSpecial}}</div>
+			</th>
+		</tr>
+		<tr class="mck-table__row">
+			<td class="mck-table-td" style="font-weight: bold;">
+				<div class="mck-cell">年度目标</div>
+			</td>
+			<td class="mck-table-td">
+				<div class="mck-cell">{{yearlyPlanning.activeAccount}}户</div>
+			</td>
+			<td class="mck-table-td">
+				<div class="mck-cell">{{yearlyPlanning.strategicAccount}}户</div>
+			</td>
+			<td class="mck-table-td">
+				<div class="mck-cell">{{yearlyPlanning.ebankAccount}}户</div>
+			</td>
+			<td class="mck-table-td">
+				<div class="mck-cell">{{yearlyPlanning.planingAccount}}条</div>
+			</td>
+			<td class="mck-table-td">
+				<div class="mck-cell">{{yearlyPlanning.deposit}}亿</div>
+			</td>
+			<td class="mck-table-td">
+				<div class="mck-cell">{{yearlyPlanning.loan}}亿</div>
+			</td>
+			<td class="mck-table-td">
+				<div class="mck-cell">{{yearlyPlanning.netIncome}}亿</div>
+			</td>
+			<td class="mck-table-td">
+				<div class="mck-cell">{{yearlyPlanning.investmentBankProducts}}亿</div>
+			</td>
+			<td class="mck-table-td">
+				<div class="mck-cell">{{yearlyPlanning.tradingBankProducts}}亿</div>
+			</td>
+		</tr>
+		<tr class="mck-table__row">
+			<td class="mck-table-td">
+				<div class="mck-cell"></div>
+			</td>
+			<td class="mck-table-td" colspan="9">
+				<div class="mck-cell" style="padding-bottom: 50px;padding-top: 30px;">
+					<div class="score-charts-wrapper clearfix">
+						<div class="score-charts-line"></div>
+						{{each data.labelData}}
+						<div class="score-chart-wrapper">
+							<div class="score-chart"></div>
+							<div class="score-chart-label">
+								<div class="score-chart-label__months clearfix">
+									{{each data.monthData}}
+									<span class="score-chart-label__month">{{$value}}月</span>
+									<!--<span class="score-chart-label__month">11月</span>
+									<span class="score-chart-label__month">12月</span>-->
+									{{/each}}
+								</div>
+								<div class="score-chart-label__text">{{$value.name}}</div>
+								{{if $value.rate === 0}}
+								<div class="score-chart-label__signal score-chart-label__signal--red"></div>
+								{{else if $value.rate == 1}}
+								<div class="score-chart-label__signal score-chart-label__signal--yellow"></div>
+								{{else if $value.rate == 2}}
+								<div class="score-chart-label__signal score-chart-label__signal--green"></div>
+								{{/if}}
+							</div>
+						</div>
+						{{/each}}
+					</div>
+				</div>
+			</td>
+		</tr>
+	</script>
+	<script type="text/html" id="single-li">
+		{{each data items i}}
+			<li data-cid="{{items.customerId}}" data-pid="{{items.planningId}}">
+				<div class="homepage-action__item-name text-overflow">{{items.customerName}}</div>
+			</li>
+		{{/each}}
+	</script>
+	<script type="text/html" id="desc-li">
+		{{each data items i}}
+			<li data-cid="{{items.customerId}}" data-pid="{{items.planningId}}">
+				<div class="homepage-action__item-name text-overflow">{{items.customerName}}</div>
+				<div class="homepage-action__item-product">{{items.productName}}</div>
+				<div class="homepage-action__item-action">{{items.action}}</div>
+			</li>
+		{{/each}}
+	</script>
+	<script type="text/html" id="desc-li2">
+		{{each data items i}}
+			<li data-cid="{{items.customerId}}" data-pid="{{items.planningId}}">
+				<div class="homepage-action__item-name text-overflow">{{items.customerName}}</div>
+				<div class="homepage-action__item-product">{{items.productName}}</div>
+			</li>
+		{{/each}}
+	</script>
+	<script type="text/html" id="sale-alert">
+		{{each data}}
+		<div class="homepage-action__item-sale">
+			<div class="homepage-action__item-name text-overflow">{{$value.customerName}}</div>
+			<div class="homepage-action__item-product">{{$value.productName}}</div>
+			<div class="homepage-action__item-action">{{$value.reason}}</div>
+		</div>
+		{{/each}}
+	</script>
+	<script type="text/html" id="approval">
+		{{each data}}
+		<div class="homepage-action__item text-overflow" data-cid="{{$value.customerId}}" data-pid="{{$value.planningId}}" title="{{$value.customerName}}">{{$value.customerName}}</div>
+		{{/each}}
+	</script>
+	<!--包裹有间隔图表的tr-->
+	<script type="text/html" id="chart-wrapper">
+		<tr class="expanded-content">
+			<td colspan="5" class="mck-table-td">
+				<div class="homepage-block__main homepage-block__main--branch">
+					<div class="table-chart-wrapper">
+						<table class="mck-table">
+							
+						</table>
+					</div>
+				</div>
+			</td>
+		</tr>
+	</script>
+	<!--包裹无间隔图表的tr-->
+	<script type="text/html" id="chart-wrapper-no-gap">
+		<tr class="expanded-content">
+			<td colspan="5" class="mck-table-td" style="padding-top: 0;">
+				<div class="table-chart-wrapper" style="border-bottom: 0;">
+					<table class="mck-table mck-table--no-gap">
+						
+					</table>
+				</div>
+			</td>
+		</tr>
+	</script>
+	<!--分行行长首页或总行行长首页业绩看板图表-->
+	<script type="text/html" id="performance">
+		<colgroup>
+			<col width="160">
+			<col width="">
+			<col width="100">
+			<col width="80">
+		</colgroup>
+		<tr class="mck-table__header" style="background: #f0f0f0;">
+			<th class="mck-table-th">
+				<div class="mck-cell" style="text-align: left;">比{{data.lastYear}}年末新增:</div>
+			</th>
+			<th class="mck-table-th">
+				<div class="mck-cell"></div>
+			</th>
+			<th class="mck-table-th">
+				<div class="mck-cell">全年目标</div>
+			</th>
+			<th class="mck-table-th">
+				<div class="mck-cell">完成度</div>
+			</th>
+		</tr>
+		{{each data.performanceData}}
+		{{if data.roleId == 5}}
+		<tr class="mck-table__row" data-index="{{$index}}">
+		{{else}}
+		<tr class="mck-table__row wrapped" data-index="{{$index}}">
+		{{/if}}
+			<td class="mck-table-td mck-table-td--btn">
+				<div class="cib-icon cib-icon-expand"></div>
+				<div class="mck-cell">{{$value.title}}</div>
+			</td>
+			<td class="mck-table-td mck-table-td--sub-branch-chart">
+				<div class="mck-cell">
+					<div class="table-inside-chart"></div>
+				</div>
+			</td>
+			<td class="mck-table-td mck-table-td--blue-text">
+				<div class="mck-cell">
+					{{$value.yearlyPlanning}}
+					{{if $value.title == '新增有效客户数' || $value.title == '战略客户新增'}}
+					户
+					{{else}}
+					亿
+					{{/if}}
+				</div>
+			</td>
+			<td class="mck-table-td mck-table-td--finish-degree">
+				<div class="mck-cell">
+					<div class="cell__percent">{{$value.finishedDegree | rateSpecial}}</div>
+					{{if $value.light == 1}}
+					<div class="cell__block cell__block--red"></div>
+					{{else if $value.light == 2}}
+					<div class="cell__block cell__block--yellow"></div>
+					{{else if $value.light == 3}}
+					<div class="cell__block cell__block--green"></div>
+					{{/if}}
+				</div>
+			</td>
+		</tr>
+		{{/each}}
+	</script>
+	<!--表格展开后显示的某一分行或支行下的各项指标-->
+	<script type="text/html" id="chart-table">
+		<colgroup>
+			<col width="160">
+			<col width="">
+			<col width="90">
+			<col width="80">
+		</colgroup>
+		<tr class="mck-table__header">
+			<th class="mck-table-th">
+				<div class="mck-cell">业绩指标</div>
+			</th>
+			<th class="mck-table-th">
+				<div class="mck-cell"></div>
+			</th>
+			<th class="mck-table-th">
+				<div class="mck-cell">全年目标</div>
+			</th>
+			<th class="mck-table-th">
+				<div class="mck-cell">完成度</div>
+			</th>
+		</tr>
+		{{each data.performanceData}}
+		<tr class="mck-table__row">
+			<td class="mck-table-td">
+				<div class="mck-cell">{{$value.title}}</div>
+			</td>
+			<td class="mck-table-td mck-table-td--sub-branch-chart">
+				<div class="mck-cell">
+					<div class="table-inside-chart"></div>
+				</div>
+			</td>
+			<td class="mck-table-td mck-table-td--blue-text">
+				<div class="mck-cell">
+					{{$value.yearlyPlanning}}
+					{{if $value.title == '新增有效客户数' || $value.title == '战略客户新增'}}
+					户
+					{{else}}
+					亿
+					{{/if}}
+				</div>
+			</td>
+			<td class="mck-table-td mck-table-td--finish-degree">
+				<div class="mck-cell">
+					<div class="cell__percent">{{$value.finishedDegree | rateSpecial}}</div>
+					{{if $value.light == 1}}
+					<div class="cell__block cell__block--red"></div>
+					{{else if $value.light == 2}}
+					<div class="cell__block cell__block--yellow"></div>
+					{{else if $value.light == 3}}
+					<div class="cell__block cell__block--green"></div>
+					{{/if}}
+				</div>
+			</td>
+		</tr>
+		{{/each}}
+	</script>
+	<!--某项业绩指标展开后显示的不同分行或支行的该指标数据-->
+	<script type="text/html" id="chart-table-no-gap">
+		<colgroup>
+			<col width="160">
+			<col width="">
+			<col width="100">
+			<col width="80">
+		</colgroup>
+		{{each data.performanceData}}
+		<tr class="mck-table__row">
+			<td class="mck-table-td">
+				<div class="mck-cell">{{$value.bankName}}</div>
+			</td>
+			<td class="mck-table-td mck-table-td--sub-branch-chart">
+				<div class="mck-cell">
+					<div class="table-inside-chart"></div>
+				</div>
+			</td>
+			<td class="mck-table-td">
+				<div class="mck-cell">
+					{{$value.yearlyPlanning}}
+					{{if $value.title == '新增有效客户数' || $value.title == '战略客户新增'}}
+					户
+					{{else}}
+					亿
+					{{/if}}
+				</div>
+			</td>
+			<td class="mck-table-td mck-table-td--finish-degree">
+				<div class="mck-cell">
+					<div class="cell__percent">{{$value.finishedDegree | rateSpecial}}</div>
+					{{if $value.light == 1}}
+					<div class="cell__block cell__block--red"></div>
+					{{else if $value.light == 2}}
+					<div class="cell__block cell__block--yellow"></div>
+					{{else if $value.light == 3}}
+					<div class="cell__block cell__block--green"></div>
+					{{/if}}
+				</div>
+			</td>
+		</tr>
+		{{/each}}
+	</script>
+	<!--不同月份图标-->
+	<script type="text/html" id="performance-icons">
+		{{if data.length == 1}}
+		<div class="mck-legend">
+			<div class="mck-legend__icon mck-legend__icon--blue3"></div>
+			<div class="mck-legend__text">{{data[0]}}月份</div>
+		</div>
+		{{else if data.length == 2}}
+		<div class="mck-legend">
+			<div class="mck-legend__icon mck-legend__icon--blue3"></div>
+			<div class="mck-legend__text">{{data[0]}}月份</div>
+		</div>
+		<div class="mck-legend">
+			<div class="mck-legend__icon mck-legend__icon--blue2"></div>
+			<div class="mck-legend__text">{{data[1]}}月份</div>
+		</div>
+		{{else}}
+		<div class="mck-legend" style="margin-left: 0;">
+			<div class="mck-legend__icon mck-legend__icon--blue3"></div>
+			<div class="mck-legend__text">{{data[0]}}月份</div>
+		</div>
+		<div class="mck-legend">
+			<div class="mck-legend__icon mck-legend__icon--blue2"></div>
+			<div class="mck-legend__text">{{data[1]}}月份</div>
+		</div>
+		<div class="mck-legend">
+			<div class="mck-legend__icon mck-legend__icon--blue1"></div>
+			<div class="mck-legend__text">{{data[2]}}月份</div>
+		</div>
+		{{/if}}
+	</script>
+</body>
+</html>

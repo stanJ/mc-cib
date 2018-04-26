@@ -1,0 +1,34 @@
+.client-info-wrapper.w2ui-form .w2ui-page{
+	background: transparent;
+	padding: 0;
+}
+.client-info-wrapper{
+	border: 0;
+}
+.client-main-info__field{
+	line-height: 26px;
+}
+.client-info-wrapper.w2ui-reset input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio]){
+	height: 26px;
+}
+.client-main-info__value {
+    line-height: 26px;
+}
+.client-info-wrapper.w2ui-form{
+	background: transparent;
+}
+.client-main-info__left{
+	padding-right: 50px;
+}
+.client-main-info__right{
+    padding-left: 50px;
+}
+.client-main-info__input{
+	display: none;
+	font-size: 14px;
+}
+.client-title__input{
+	width: 440px;
+	margin: 0 auto;
+	padding-top: 12px;
+}

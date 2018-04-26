@@ -1,0 +1,92 @@
+#subsidiary,
+#branch{
+	display: none;
+}
+.select2-results__option{
+	padding: 15px 6px;
+}
+.date-select{
+	display: none;
+}
+#estimate{
+	padding-left: 8px;
+	height: 44px;
+	line-height: 44px;
+	border: 0 none;
+}
+
+#line-filter{
+	padding-left: 20px;
+}
+#line-filter .tab-filter-selected{
+	font-weight: bold;
+	color: rgb(30,30,30);
+}
+.right-create{
+	position: relative;
+	float: right;
+	padding-right: 20px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 16px;
+	color: rgb(74,94,137);
+	cursor: pointer;
+}
+.right-create:before{
+	content: "+";
+	height: 50px;
+	font-size: 20px;
+	line-height: 50px;
+	color: rgb(74,94,137);
+}
+#myGrid{
+	overflow: hidden;
+}
+
+/* w2ui */
+.custom-grid{
+    border: 0 none;
+}
+.w2ui-grid-body table .w2ui-head{
+    border: 0 none;
+}
+.w2ui-grid .w2ui-grid-body table td{
+    border: 0 none;
+}
+.w2ui-grid .w2ui-grid-body .w2ui-grid-columns, .w2ui-grid .w2ui-grid-body .w2ui-grid-fcolumns{
+	box-shadow: none;
+}
+.w2ui-grid .w2ui-grid-body table td.w2ui-grid-data > div{
+	font-size: 14px;
+}
+.w2ui-grid .w2ui-grid-body table .w2ui-head{
+	height: 50px;
+	border: 0 none;
+	background: rgb(240,240,240);
+}
+.w2ui-grid .w2ui-grid-body table .w2ui-head > div{
+	font-size: 14px;
+	text-align: center;
+}
+.w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-odd{
+	height: 50px;
+}
+.w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-even, .w2ui-grid .w2ui-grid-body .w2ui-grid-frecords table tr.w2ui-even{
+	background: rgb(247,248,250);
+}
+.w2ui-grid .w2ui-toolbar-search .w2ui-search-all{
+	margin-left: 10px !important;
+}
+.redirect-uri{
+	cursor: pointer;
+	font-size: 14px;
+}
+.green_text{
+	color: #2FA65B;
+}
+.edit_text{
+	color: #4776C7;
+}
+.red_text{
+	color: #E14546;
+}

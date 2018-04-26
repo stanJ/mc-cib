@@ -1,0 +1,109 @@
+<!DOCTYPE>
+<html > <!-- 遵循W3C规范 具体去看一下百度百科-->
+<head>
+    <title>CIB</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"> <!-- 规范网页编码格式UTF-8 -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Expires" CONTENT="0"> 
+</head>
+<body>
+	<script src="../js/base.js" type="text/javascript" charset="utf-8" id="seajsnode"></script>
+	<div id="wrap">
+		<div id="right-content">
+			<h1 class="page-name">有贷户总览</h1>
+			<div id="top-select-wrap">
+				<div class="top-select bg-base-blue">
+					<div class="select-box bg-white">
+						<select name="state" id="subsidiary" class="js-example-basic-single"></select>
+					</div>
+				</div>
+				<div class="top-select bg-base-blue">
+					<div class="select-box bg-white">
+						<select name="state" id="branch" class="js-example-basic-single"></select>
+					</div>
+				</div>
+				<div class="top-select bg-base-blue date-select">
+					<div class="select-box bg-white">
+						<select id="estimate" class="js-example-basic-single"></select>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div id="right-main-content" class="bg-white">
+				<h2 class="content-title">
+					综合经济利润、净收入、资产日均余额
+				</h2>
+				<div id="right-tab">
+					<div class="right-tab-inner">
+						<div class="unsuccess selected-filter">累计曲线</div>
+						<div class="success">分层</div>
+					</div>
+					<div class="selected-tab bg-base-blue">累计曲线</div>
+				</div>
+				<div class="clearfix"></div>			
+				<div class="down-mark-dashed"></div>
+				<div class="left-chart-wrap">
+					<div class="top-chart-legend">
+						<ul class="top-legend-ul">
+							<li class="top-legend-li">
+								<span class="top-legend-square profits-legend"></span>
+								<span class="top-legend-text">经济利润</span>
+							</li>
+							<li class="top-legend-li">
+								<span class="top-legend-square netincome-legend"></span>
+								<span class="top-legend-text">净收入</span>
+							</li>
+							<li class="top-legend-li">
+								<span class="top-legend-square daily-legend"></span>
+								<span class="top-legend-text">日均余额</span>
+							</li>
+						</ul>
+					</div>
+					<div id="top-chart-container" class="chart-container"></div>
+				</div>
+				<div class="right-chart-wrap">
+					<div class="top-chart-legend">
+						<ul class="top-legend-ul">
+							<li class="top-legend-li">
+								<span class="top-legend-square deposit-legend"></span>
+								<span class="top-legend-text">存款</span>
+							</li>
+							<li class="top-legend-li">
+								<span class="top-legend-square middle-legend"></span>
+								<span class="top-legend-text">中间业务</span>
+							</li>
+							<li class="top-legend-li">
+								<span class="top-legend-square property-legend"></span>
+								<span class="top-legend-text">资产</span>
+							</li>
+						</ul>
+					</div>
+					<div class="chart-wrap other-chart space-chart clearfix">
+						<div class="chart-desc">
+							<span>经济利润<br />(亿元)</span>
+						</div>
+						<div id="column-chart-1" class="sub-container"></div>
+					</div>
+					<div class="chart-wrap other-chart clearfix">
+						<div class="chart-desc">
+							<span>净收入<br />(亿元)</span>
+						</div>
+						<div id="column-chart-2" class="sub-container"></div>
+					</div>
+					<div class="chart-wrap other-chart clearfix">
+						<div class="chart-desc">
+							<span>日均余额<br />(亿元)</span>
+						</div>
+						<div id="column-chart-3" class="sub-container"></div>
+					</div>
+				</div>
+				<div class="clearfix"></div>				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+.customer-form .w2ui-field > label{
+	width: 120px;
+}
+.customer-form .w2ui-field > div{
+	margin-left: 120px;
+}
+select.js-example-basic-single{
+	display: none;
+}
+.switch--customer-list{
+	display: block;
+	margin-left: -129px;
+}
+.select2-wrapper{
+    background-color: #fff;
+    border-radius: 6px;
+}
+.select2-wrapper .select2-container{
+    width: 100%;
+    padding: 0 0 0 30px;
+    background: url(../images/search-icon.png) 12px 14px no-repeat;
+}
+.detail__one{
+	font-size: 14px;
+}
+.select2-dropdown{
+	background: #fff;
+	border: 1px solid #dfe4ed;
+}

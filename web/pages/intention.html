@@ -1,0 +1,62 @@
+<!DOCTYPE>
+<html > <!-- 遵循W3C规范 具体去看一下百度百科-->
+<head>
+    <title>CIB</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"> <!-- 规范网页编码格式UTF-8 -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Expires" CONTENT="0"> 
+</head>
+<body>
+	<script src="../js/base.js" type="text/javascript" charset="utf-8" id="seajsnode"></script>
+	<div id="wrap">
+		<div id="right-content">
+			<h1 class="page-name">月度落地业务量</h1>
+			<div id="top-select-wrap">
+				<div class="top-select bg-base-blue">
+					<div class="select-box bg-white">
+						<select name="state" id="subsidiary" class="js-example-basic-single"></select>
+					</div>
+				</div>
+				<div class="top-select bg-base-blue">
+					<div class="select-box bg-white">
+						<select name="state" id="branch" class="js-example-basic-single"></select>
+					</div>
+				</div>
+				<!--
+				<div class="top-select bg-base-blue">
+					<div class="select-box bg-white">
+						<select name="state" id="manager" class="js-example-basic-single"></select>
+					</div>
+				</div>
+				-->
+			</div>
+			<div id="right-main-content" class="bg-white">
+				<div class='title'><div class='tips'></div><span id='near_date'></span></div>
+				<div class='graph_wrap'>
+					<div class='graph_left_wrap' id='graph_left_wrap'>
+						
+					</div>
+					<div class='graph_right_wrap'>
+						<div id='graph_right_top'></div>
+						<div id='graph_right_center'></div>
+						<div id='graph_right_bottom'></div>
+					</div>
+				</div>
+				<div id="center-tab">
+					<div class="right-tab-inner">
+						<div class="unsuccess selected-filter" data-type='bankList'>支行</div>
+						<div class="success " data-type='pieList'>产品</div>
+					</div>
+					<div class="selected-tab bg-base-blue">支行</div>
+				</div>
+				<div id="bankList" class="no-border-grid custom-grid" style='height:500px;;' data-load='false'></div>
+				<div id="pieList" data-load='false' ></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

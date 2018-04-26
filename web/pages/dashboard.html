@@ -1,0 +1,269 @@
+<!DOCTYPE>
+<html > <!-- 遵循W3C规范 具体去看一下百度百科-->
+<head>
+    <title>CIB</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"> <!-- 规范网页编码格式UTF-8 -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Expires" CONTENT="0"> 
+</head>
+<body>
+	<script src="../js/base.js" type="text/javascript" charset="utf-8" id="seajsnode"></script>
+	<div id="wrap">
+		<div id="right-content">
+			<h1 class="page-name">客户经理仪表盘</h1>
+			<div id="top-select-wrap">
+				<div class="top-select bg-base-blue">
+					<div class="select-box bg-white">
+						<select name="state" id="subsidiary" class="js-example-basic-single"></select>
+					</div>
+				</div>
+				<div class="top-select bg-base-blue">
+					<div class="select-box bg-white">
+						<select name="state" id="branch" class="js-example-basic-single"></select>
+					</div>
+				</div>
+				<div class="top-select bg-base-blue">
+					<div class="select-box bg-white">
+						<select name="state" id="manager" class="js-example-basic-single"></select>
+					</div>
+				</div>
+				<!-- <div class="top-search">
+					<div class="right-search-box">
+						<select id="search-input" class="search-input"/></select>
+					</div>
+					<div class="search-btn">
+						搜索
+					</div>
+				</div> -->
+				<div class="clearfix"></div>
+			</div>
+			<div id="top-filter-wrap">
+				<div class="top-filter">
+					<ul class="filter-wrap"></ul>
+					<div class="clearfix"></div>
+					<ul class="clue-wrap"></ul>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<div id="right-main-content" class="bg-white">
+				<div id="myGrid" class="no-border-grid custom-grid"></div>
+			</div>
+		</div>
+	</div>
+	<script type="text/html" id="filter-item">
+		{{each data items i}}
+			{{if i == (data.length - 1)}}
+			<li class="filter-item last-filter" data-configValue="{{items.configValue}}"><div class="item-inner-wrap">{{items.configName}}</div></li>
+			{{else}}
+			<li class="filter-item" data-configValue="{{items.configValue}}"><div class="item-inner-wrap">{{items.configName}}</div></li>
+			{{/if}}
+		{{/each}}
+	</script>
+	<script type="text/html" id="clue-item">
+		{{each data items i}}
+			{{if items.trackCount == 0}}
+			<li class="clue-item clue-no-show">
+			{{else}}
+			<li class="clue-item">
+			{{/if}}
+				<div class="clue-num">{{items.amount}}万/{{items.trackCount}}</div>
+				{{if items.trackModelList.length > 0}}
+					{{if i == 0}}
+						<div class="clue-line first-clue-line">
+					{{else if i == (data.length - 1)}}
+						<div class="clue-line last-clue-line">
+					{{else}}
+						<div class="clue-line">
+					{{/if}}
+						<h4 class="clue-float-num">{{items.amount}}万/{{items.trackCount}}</h4>
+						<ul class="clue-line-wrap">
+							{{each items.trackModelList lists j}}
+								{{if j < 4}}
+								<li class="clue-line-item clearfix">
+									{{if lists.trackNo != null}}
+										{{each lists.trackNo.split(";") v k}}
+											{{if k == 2}}
+											<span>{{v*1}}万元</span>
+											{{else}}
+											<span>{{v}}</span>
+											{{/if}}
+										{{/each}}
+									{{else}}
+										""
+									{{/if}}
+								</li>
+								{{/if}}
+							{{/each}}
+						</ul>
+					</div>
+				{{/if}}
+			</li>
+		{{/each}}
+	</script>
+	<script type="text/html" id="backup-box">
+		<div class="w2ui-page page-0">
+		    <div class="strategy-form">
+				<div class="w2ui-field">
+					<label>历史备注:</label>
+				   	<div>
+						<div class='history' disabled="disabled">
+							{{if data}}
+							{{each data item i}}
+								<div>
+									<span class="clearfix">
+										<span class="bck-name">{{item.roleName}}: {{item.employeeName}}&nbsp;&nbsp;</span>
+										<span class="bck-date">{{item.createTime}}</span>
+									</span>
+									<span>{{item.remark}}</span>
+								</div>
+							{{/each}}
+							{{else}}
+								<div>
+									尚未添加备注
+								</div>
+							{{/if}}
+						</div>
+					</div>
+				</div>
+				{{if showStatus == 1}}
+				<div class="w2ui-field">
+					<label>新增备注:</label>
+				   	<div>
+						<textarea name="backup" id="backup-content"></textarea>
+					</div>
+				</div>
+				{{/if}}
+			</div>
+		</div>
+		<div class="w2ui-buttons">
+			{{if showStatus == 1}}
+		    <button id="save-back" class="button popup-btn button--primary" data-trackId="{{trackId}}" name="save">确定</button>
+		    <button class="button popup-btn button--cancel" name="reset">取消</button>
+		    {{else}}
+		    <button class="button popup-btn button--primary" name="reset">确定</button>
+		    {{/if}}
+		</div>
+	</script>
+	<script type="text/html" id="track-box">
+		<div class="w2ui-page page-0">
+		    <div class="strategy-form">
+				<!-- <div class="w2ui-field">
+					<label>工作纪要:</label>
+				   	<div class="round-box stage-box" data-val="{{data.stageCode}}">{{data.stage}}</div>
+				</div> -->
+				<div class="w2ui-field">
+					<label><span class="require_mark">*</span>拜访客户:</label>
+				   	<div style='padding-top: 6px;'>
+						<input type="radio" name="visit" value='PHONE' />&nbsp;电话&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" name="visit" value='METTING' />&nbsp;会议&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" name="visit" value='WORKING' />&nbsp;工作拜访&nbsp;&nbsp;&nbsp;&nbsp;
+				   	</div>
+				</div>
+				<div class="w2ui-field">
+					<label><span class="require_mark">*</span>线索成功概率:</label>
+				   	<div>
+				   		<div class="plus-num">+</div>
+				   		<div class="minus-num">-</div>
+						<input id="percent" value="{{data.probability}}" />
+				   	</div>
+				</div>
+				<div class="w2ui-field">
+					<label><span class="require_mark">*</span>预计完成时间:</label>
+				   	<div>
+						<input id="estimate" class='date-picker' type="text" value="{{data.estimateEndDate}}"/>
+				   	</div>
+				</div>
+				<div class="w2ui-field">
+					<div>
+						<div class="left-date">
+							{{data.stage}}阶段用时基准为{{data.benchmark}}天,参考完成时间为{{data.landingTime}}
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				<!-- <div class="w2ui-field">
+					<label><span class="require_mark">*</span>累计落地业务量(万元):</label>
+				   	<div>
+						<input id="amount" value="{{data.amount == null ? 0 : data.amount}}"/>
+				   	</div>
+				</div> -->
+				{{if data.stage == "额度申报"}}
+				<div class="w2ui-field">
+					<label><span class="require_mark">*</span>累计落地业务量(万元):</label>
+				   	<div>
+						<input id="amount" value="{{data.amount == null ? 0 : data.amount}}"/>
+				   	</div>
+				</div>
+				{{/if}}
+				<div class="w2ui-field">
+					<label><span class="require_mark">*</span>阶段具体行动:</label>
+				   	<div>
+						<textarea id="action" type="text">{{data.action}}</textarea>
+				   	</div>
+				</div>
+				<!-- {{if data.trackStatusCode == "-1"}}
+				<div class="w2ui-field">
+					<label><span class="require_mark">*</span>落后原因:</label>					
+				   	<div>
+						<textarea id="remark" class="new" name="new"></textarea>
+					</div>
+				</div>
+				{{/if}} -->
+			</div>
+		</div>
+		<div class="w2ui-buttons">
+			<button id="finish-step" class="button popup-btn button--primary" data-track-status-code="{{data.trackStatusCode}}" data-recid="{{recid}}" data-trackid="{{trackId}}" data-stage-code="{{stageCode}}" name="save">完成本阶段</button>
+		    <button id="save-edit" class="button popup-btn button--primary" data-track-status-code="{{data.trackStatusCode}}" data-recid="{{recid}}" data-trackid="{{trackId}}" data-stage-code="{{stageCode}}" name="save">确定</button>
+		    <button class="button popup-btn button--cancel" name="reset">取消</button>
+		</div>
+	</script>
+	<script type="text/html" id="finality-box">
+		<div class="w2ui-page page-0">
+		    <div class="strategy-form">
+				<div class="w2ui-field">
+					<label><span class="require_mark">*</span>终止原因:</label>
+				   	<div>
+						<textarea id="finality-text" class="finality" name="finality"></textarea>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="w2ui-buttons">
+		    <button id="finality-btn" class="button popup-btn button--primary" data-recid="{{recid}}" data-trackid="{{trackId}}" name="save">确定</button>
+		    <button class="button popup-btn button--cancel" name="reset">取消</button>
+		</div>
+	</script>
+	<script type="text/html" id="Finished">
+		<div class="w2ui-page page-0">
+		    <div class="strategy-form">
+				<div class="message-wrap">
+					<div class="w2ui-field">
+						<label><span class="require_mark">*</span>完成日期:</label>
+					   	<div>
+					   		<input type="hidden" />
+							<input id="finish-date" class='date-picker' type="text" value=""/>
+						</div>
+					</div>
+					<div class="w2ui-field">
+						<label>备注:</label>
+					   	<div>
+							<textarea name="remark" id="remark" type="text" cols="30" rows="5"></textarea>
+							{{if data.trackStatusCode == "-1"}}
+							<span style="color: red; display: block;font-size: 12px;">当前进度落后，请在备注中填写落后原因</span>
+							{{/if}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="w2ui-buttons">
+		    <button id="send-finished" class="button popup-btn button--primary" data-track-status-code="{{data.trackStatusCode}}" data-trackid="{{trackId}}" data-stage-code="{{stageCode}}" name="save">确定</button>
+		    <button id="cancel-finished" class="button popup-btn button--cancel" name="reset">取消</button>
+		</div>
+	</script>
+</body>
+</html>

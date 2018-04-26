@@ -1,0 +1,201 @@
+<!DOCTYPE>
+<html > <!-- 遵循W3C规范 具体去看一下百度百科-->
+<head>
+    <title>CIB</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"> <!-- 规范网页编码格式UTF-8 -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Expires" CONTENT="0"> 
+</head>
+<body>
+	<script src="../js/base.js" type="text/javascript" charset="utf-8" id="seajsnode"></script>
+	<div id="wrap">
+		<div id="right-content">
+			<h1 class="page-name">机构管理</h1>
+			<div id="right-main-content" class="bg-white">
+				<ul>
+					<li>
+						<div class="import-btn">导入</div>
+						<input type="file" id="upload_file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" style="display: none;" />
+					</li>
+					<li>
+						<div class="create-btn">添加</div>
+					</li>
+				</ul>
+				<div id="myGrid"></div>
+				<div class='define-form-inner'>
+					<div class="input-wrap">
+						<span>落地业务量最小值:</span>
+						<input class="min-value">&nbsp;万元
+					</div>
+					<div class="check-wrap">
+						<div class="check-title">计算的产品:</div>
+						<div class="check-box">
+							<span class="check-item">
+								<input type="checkbox">&nbsp;存款
+							</span>
+						</div>
+					</div>
+					<div class="btn-wrap">
+						<span class="confirm-btn confirm-define">保存</span>
+						<span class="cancel-btn cancel-define">取消</span>
+					</div>
+				</div>
+				<div class='monthly-form-inner'>
+					<div class="input-wrap">
+						<span>落地业务量标准:</span>
+						<input class="landing-value">&nbsp;万元
+					</div>
+					<div class="input-wrap">
+						<span>意向业务量标准:</span>
+						<input class="Intentional-value">&nbsp;万元
+					</div>
+					<div class="btn-wrap">
+						<span class="confirm-btn confirm-montyly">保存</span>
+						<span class="cancel-btn cancel-montyly">取消</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/html" id="info">
+		<div class="info-wrap">
+			<ul class="info-ul">
+				<li class="info-item">
+					<span class="info-title">客户编号:</span>
+					<span class="info-input">
+						<input type="text" value="{{data.customerInfoCode}}" disabled="disabled" />
+					</span>
+				</li>
+				<li class="info-item">
+					<span class="info-title">客户名称:</span>
+					<span class="info-input">
+						<input type="text" value="{{data.customerName}}" disabled="disabled" />
+					</span>
+				</li>
+				<li class="info-item">
+					<span class="info-title">集团名称:</span>
+					<span class="info-input">
+						<input type="text" value="{{data.companyName}}" disabled="disabled" />
+					</span>
+				</li>
+				<li class="info-item">
+					<span class="info-title">战略客户:</span>
+					<span class="info-input">
+					{{if data.isStrategic == 0}}
+						<input type="text" value="否" disabled="disabled" />
+					{{else}}
+						<input type="text" value="是" disabled="disabled" />
+					{{/if}}
+					</span>
+				</li>
+				<li class="info-item">
+					<span class="info-title">一级行业:</span>
+					<span class="info-input">
+						<input type="text" value="{{data.level1}}" disabled="disabled" />
+					</span>
+				</li>
+				<li class="info-item">
+					<span class="info-title">二级行业:</span>
+					<span class="info-input">
+						<input type="text" value="{{data.level2}}" disabled="disabled" />
+					</span>
+				</li>
+				<li class="info-item">
+					<span class="info-title">三级行业:</span>
+					<span class="info-input">
+						<input type="text" value="{{data.level3}}" disabled="disabled" />
+					</span>
+				</li>
+				<li class="info-item">
+					<span class="info-title">开户时间:</span>
+					<span class="info-input">
+						<input type="text" value="{{data.startTime}}" disabled="disabled" />
+					</span>
+				</li>
+				<li class="info-item">
+					<span class="info-title">合作年限:</span>
+					<span class="info-input">
+						<input type="text" value="{{data.cooperationYear}}" disabled="disabled" />
+					</span>
+				</li>
+				<li class="info-item">
+					<span class="info-title">客户经理:</span>
+					<span class="info-input">
+						<input type="text" value="{{data.employeeName}}" disabled="disabled" />
+					</span>
+				</li>
+				<li class="info-item">
+					<span class="info-title">所属分行:</span>
+					<span class="info-input">
+						<input type="text" value="{{data.bankBranchName}}" disabled="disabled" />
+					</span>
+				</li>
+				<li class="info-item">
+					<span class="info-title">所属支行:</span>
+					<span class="info-input">
+						<input type="text" value="{{data.bankSubsetName}}" disabled="disabled" />
+					</span>
+				</li>
+				<li class="info-item">
+					<span class="info-title">信用评级:</span>
+					<span class="info-input">
+						<input type="text" value="{{data.creditRating}}" disabled="disabled" />
+					</span>
+				</li>
+				<li class="info-item">
+					<span class="info-title">是否已出现风险</span>
+					<span class="info-input">
+						{{if data.hasrRisk == 0}}
+							<input type="text" value="否" disabled="disabled" />
+						{{else}}
+							<input type="text" value="是" disabled="disabled" />
+						{{/if}}
+					</span>
+				</li>
+			</ul>
+		</div>
+	</script>
+	<script type="text/html" id="bankOpt">
+		<div class="opt-wrap">
+			<div class="opt-level">
+				<span class="opt-title">级别:</span>
+				<span class="level-wrap">
+					<select name="" class="level-select" id="level-select">
+						<option value="0">分行</option>
+						<option value="1">支行</option>
+					</select>
+				</span>
+			</div>
+			<div class="opt-team-name">
+				<span class="opt-title">梯队:</span>
+				<span class="opt-input">
+					<input type="text" id='team-name' />
+				</span>
+			</div>
+			<div class="opt-branch-name">
+				<span class="opt-title">分行:</span>
+				<span class="opt-input">
+					<input type="text" id='branch-name' />
+				</span>
+				<span class="level-wrap" style="display: none;">
+					<select name="" class="branch-select" id="branch-select"></select>
+				</span>
+			</div>
+			<div class="opt-subset-name">
+				<span class="opt-title">支行:</span>
+				<span class="opt-input">
+					<input type="text" id='subset-name' />
+				</span>
+			</div>
+			<div class="btn-wrap">
+				<span class="confirm-btn confirm-bank">保存</span>
+				<span class="cancel-btn">取消</span>
+			</div>
+		</div>
+	</script>
+</body>
+</html>

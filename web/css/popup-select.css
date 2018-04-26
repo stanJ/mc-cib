@@ -1,0 +1,130 @@
+/*popupSelect start*/
+.popup-wrap{
+	height: 100%;
+	padding-top: 20px;
+	overflow: hidden;
+}
+.tab-wrap{
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 2px solid rgb(71,118,199);
+	background-color: rgb(247,248,250);
+}
+.tab-item{
+	float: left;
+	width: 12.5%;
+	font-size: 14px;
+	text-align: center;
+	color: rgb(84,84,84);
+	cursor: pointer;
+}
+.select-wrap{
+	display: none;
+}
+.item-wrap{
+	float: left;
+	width: 33.33%;
+	height: 83%;
+	overflow: hidden;
+	overflow-y: auto;
+	background-color: rgb(255,255,255);
+}
+.item-gray-bg{
+	background-color: rgb(235,235,235);
+}
+.item-selected{
+	background-color: rgb(71,118,199);
+	color: rgb(255,255,255);
+}
+.btn-wrap{
+	width: 185px;
+	height: 30px;
+    margin: 6px auto 0 auto;
+}
+.btn-wrap div{
+	display: inline-block;
+	width: 80px;
+	height: 30px;
+	line-height: 30px;
+	border-radius: 4px;
+	text-align: center;
+	font-size: 14px;
+	cursor: pointer;
+}
+.reset-btn{
+	background: rgb(240,240,240);
+}
+.confirm-btn{
+	margin-left: 20px;
+	background: rgb(71,118,199);
+	color: rgb(255,255,255);
+}
+/*select list start*/
+.check-item{
+	position: relative;
+	height: 44px;
+	line-height: 44px;
+	font-size: 14px;
+	text-indent: 40px;
+	cursor: pointer;
+}
+.item-check-icon{
+	position: absolute;
+	display: block;
+	left: 15px;
+	top: 15px;
+	width: 15px;
+	height: 15px;
+	border: 1px solid rgb(185,185,185);
+	z-index: 100;
+}
+.item-dec{
+	display: block;
+}
+.level2-wrap{
+	display: none;
+}
+.level3-wrap{
+	display: none;
+}
+.selected-level1{
+	background-color: rgb(255,255,255);
+	color: rgb(71,118,199);
+}
+.selected-level1:before{
+	position: absolute;
+	left: 0;
+	top: 0;
+	content: "";
+	display: block;
+	height: 100%;
+	width: 5px;
+	background: rgb(71,118,199);
+}
+.selected-level2{
+	background-color: rgb(235,235,235);
+	color: rgb(71,118,199);
+}
+.selected-level2:before{
+	position: absolute;
+	left: 0;
+	top: 0;
+	content: "";
+	display: block;
+	height: 100%;
+	width: 5px;
+	background: rgb(71,118,199);
+}
+.half-checked .item-check-icon{
+	background: url(../images/half-checked.png) center center no-repeat;
+	background-size: 90% auto;
+}
+.full-checked .item-check-icon{
+	background: url(../images/item-checked.png) center center no-repeat;
+	background-size: 90% auto;
+}
+.list-shown{
+	display: block;
+}
+/*select list end*/
+/*popupSelect end*/

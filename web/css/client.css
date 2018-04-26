@@ -1,0 +1,506 @@
+.client-search{
+	width: 100%;
+	height: 46px;
+}
+.search-input{
+	font-size: 14px;
+}
+.select2-container{
+	font-size: 14px;
+}
+.search-input .select2-container .select2-selection--single{
+	height: 44px;
+}
+.search-input .select2-container--default .select2-selection--single .select2-selection__rendered{
+	line-height: 44px;
+}
+.search-input .select2-container--default .select2-selection--single .select2-selection__arrow{
+	height: 42px;
+}
+
+.client-tabs{
+	width: 1100px;
+	margin: 0 auto;
+}
+.client-btn-wrapper{
+	text-align: center;
+	height: 44px;
+}
+.client-btn{
+	width: 68px;
+	height: 44px;
+	background: #4d80cb;
+	display: inline-block;
+	font-size: 14px;
+	color: #fff;
+	line-height: 44px;
+	text-align: center;
+	cursor: pointer;
+}
+.client-tab-content-container{
+	position: relative;
+}
+.client-tab-content{
+	padding: 10px 0 18px;
+	box-sizing: border-box;
+	overflow-y: auto;
+	/*min-height: 250px;
+	height: 1px;*/
+}
+
+.base-info__left, .base-info__right, .base-info__middle{
+	float: left;
+	width: 33.33%;
+	box-sizing: border-box;
+	position: relative;
+}
+.base-info__main{
+	width: 200px;
+	margin: 0 auto;
+}
+.base-info__title{
+	font-size: 14px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.base-info__rect{
+	width: 40px;
+	margin: 0 auto;
+	height: 6px;
+	background: #b2bdd1;
+	margin-bottom: 30px;
+}
+.base-info__list{
+	font-size: 12px;
+}
+.base-info__item{
+	margin-bottom: 22px;
+	color: #565656;
+}
+.base-info__field{
+	width: 86px;
+	float: left;
+	text-align: right;
+}
+.base-info__value{
+	margin-left: 110px;
+}
+.base-info__middle>.base-info__main{
+	width: 230px;
+}
+.base-info__middle .base-info__field{
+	width: 120px;
+}
+.base-info__middle .base-info__value{
+	margin-left: 137px;
+}
+.base-info__right>.base-info__main{
+	width: 220px;
+}
+.base-info__right .base-info__field{
+	width: 110px;
+}
+.base-info__right .base-info__value{
+	margin-left: 137px;
+}
+.base-info__left:after{
+	content: '';
+	width: 0;
+	height: 390px;
+	border-right: 1px solid #e7e9ec;
+	right: 0;
+	top: 100px;
+	position: absolute;
+}
+.base-info__middle:after{
+	content: '';
+	width: 0;
+	height: 390px;
+	border-right: 1px solid #e7e9ec;
+	right: 0;
+	top: 100px;
+	position: absolute;
+}
+.client-tab-wrapper{
+	background: #fff;
+}
+.base-form-left{
+	width: 320px;
+	float: left;
+}
+.base-form-middle{
+	width: 360px;
+	float: left;
+}
+.base-form-right{
+	width: 360px;
+	float: left;
+}
+.base-form-left .w2ui-field > div{
+	margin-left: 140px;
+}
+.base-form-middle .w2ui-field > div{
+	margin-left: 180px;
+}
+.base-form-right .w2ui-field > div{
+	margin-left: 180px;
+}
+.base-form-left .w2ui-field > label{
+	width: 140px;
+}
+.base-form-middle .w2ui-field > label {
+    width: 180px;
+}
+.base-form-right .w2ui-field > label{
+	width: 180px;
+}
+.base-form-left .base-info__title-wrapper{
+	margin-left: 50px;
+}
+.base-form-middle .base-info__title-wrapper{
+	margin-left: 80px;
+}
+.base-form-right .base-info__title-wrapper{
+	margin-left: 80px;
+}
+.base-info__title-wrapper .base-info__rect{
+	margin-bottom: 20px;
+}
+.w2ui-list ul li {
+	color: #333;
+}
+/*strategy*/
+.strategy-wrapper{
+	width: 900px;
+	margin: 0 auto;
+	font-size: 12px;
+    line-height: 2;
+}
+.strategy__item{
+	margin-bottom: 22px;
+    color: #3c3c3c;
+}
+.strategy__field{
+	width: 120px;
+    float: left;
+    text-align: right;
+    font-weight: bold;
+}
+.strategy__value{
+	margin-left: 135px;
+}
+.strategy-form .w2ui-field > label{
+	width: 150px;
+}
+.strategy-form .w2ui-field > div{
+	margin-left: 150px;
+}
+
+.client-btn--new-bank{
+	width: 120px;
+	float: right;
+}
+.client-btn-text-wrapper{
+	line-height: 44px;
+	color: #3c3c3c;
+}
+.client-btn-text{
+	margin-right: 18px;
+	float: left;
+}
+.client-text-btns{
+	line-height: 44px;
+	color: #4A5E89;;
+}
+.client-btn--text{
+	margin-right: 20px;
+	float: left;
+	cursor: pointer;
+}
+/*other banks*/
+.other-banks-table-wrapper.w2ui-grid .w2ui-grid-body table .w2ui-head {
+    height: 44px;
+    border: 0 none;
+    background: #f0f0f0;
+}
+.client-tab-content--other-banks{
+	padding: 0 0 22px;
+}
+.other-banks-form-left{
+	width: 282px;
+	float: left;
+}
+.other-banks-form-right{
+	width: 316px;
+	float: left;
+}
+.other-banks-form-left .w2ui-field > div{
+	margin-left: 84px;
+}
+.other-banks-form-right .w2ui-field > div{
+	margin-left: 120px;
+}
+.other-banks-form-left .w2ui-field > label{
+	width: 84px;
+}
+.other-banks-form-right .w2ui-field > label{
+	width: 120px;
+}
+
+/*we bank*/
+.we-bank-table-wrapper.w2ui-grid .w2ui-grid-body table .w2ui-head {
+    height: 44px;
+    border: 0 none;
+    background: #f0f0f0;
+}
+.client-tab-content--we-bank{
+	padding: 0 0 22px;
+}
+/*plan*/
+.plan-table-wrapper.w2ui-grid .w2ui-grid-body table .w2ui-head {
+    height: 44px;
+    border: 0 none;
+    background: #f0f0f0;
+}
+.client-tab-content--plan{
+	padding: 0 0 22px;
+}
+.client-mask{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	z-index: 10;
+}
+.client-no-plan-wrapper{
+    width: 162px;
+    height: 117px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 20;
+}
+.client-no-plan-container{
+    position: relative;
+    top: -50%;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.client-no-plan-text{
+	font-size: 14px;
+    color: #3C3C3C;
+    letter-spacing: 0.7px;
+    line-height: 36px;
+    text-align: center;
+}
+.client-no-plan-btn{
+	width: 120px;
+	margin-top: 11px;
+}
+.client-btn--dotted{
+    margin: 10px 20px 16px;
+    height: 34px;
+    border: 2px dotted #a4aec4;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+    cursor: pointer;
+    line-height: 30px;
+	font-size: 14px;
+	color: #4A5E89;
+}
+.client-popup-body{
+	padding: 5px 20px 15px;
+}
+.plan-form .w2ui-field > label {
+    width: 85px;
+}
+.plan-form .w2ui-field > div {
+    margin-left: 85px;
+}
+.plan-form .w2ui-field textarea{
+	height: 100px;
+}
+.client-btn--approved-cancel{
+    color: #4D80CB;
+    background-color: transparent;
+}
+.tooltip-inner-wrap{
+	line-height: 16px;
+}
+/*clue*/
+.client-tab-content--clue{
+	background-color: #e5e9ec;
+}
+#top-filter-wrap{
+	margin-top: 0;
+}
+.client-filter-wrapper{
+    background: #fff;
+}
+.filter-wrap{
+	width: 1133px;
+}
+.client-clue-wrapper{
+	background: #fff;
+}
+.clue-wrap{
+	margin-top: 10px;
+    padding: 10px 10px 20px;
+    height: initial;
+    background-color: #fff;
+    box-sizing: border-box;
+    width: 1133px;
+}
+#myGrid.w2ui-grid .w2ui-grid-body table .w2ui-head{
+	height: 44px;
+	border: 0 none;
+	background: #f0f0f0;
+}
+#myGrid.w2ui-grid .w2ui-grid-body .w2ui-grid-columns, #myGrid.w2ui-grid .w2ui-grid-body .w2ui-grid-fcolumns{
+	box-shadow: none;
+}
+.clue-form .w2ui-field > label{
+	width: 56px;
+}
+.clue-form .w2ui-field > div{
+	margin-left: 56px;
+}
+
+.filter-item{
+    cursor: initial;
+}
+.clue-num{
+	cursor: initial;
+}
+/* business */
+.busiess-wrap{
+	padding: 40px 30px;
+}
+.business-left,
+.business-right{
+	float: left;
+	height: 600px;
+	width: 50%;
+}
+.business-left{
+	border-right: 1px solid #CDD2D8;
+}
+.top-chart,
+.bottom-chart{
+	height: 50%;
+	padding: 0 50px;
+}
+.top-chart{
+	border-bottom: 1px solid #CDD2D8;
+}
+#product-chart h4{
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+}
+#productGrid{
+	margin-top: 20px;
+	height: 200px;
+	overflow: auto;
+}
+span.squ-icon,
+span.line-icon{
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	width: 16px;
+	height: 16px;
+	margin-right: 5px;
+}
+span.squ-icon{
+	border-radius: 3px;
+	background-color: #2FA65B;
+}
+/*notify*/
+.client-customer-code{
+	margin-right: 16px;
+}
+.client-year{
+    width: 70px;
+    height: 26px;
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    font-size: 12px;
+    line-height: 28px;
+    background: #fff;
+    border-radius: 35px;
+    color: #4776c7;
+}
+.client-value{
+	min-width: 15px;
+	display: inline-block;
+}
+.client-notify{
+    color: #E14546;
+    font-weight: bold;
+    margin-left: 4px;
+    min-width: 20px;
+    display: inline-block;
+}
+.client-modify-info{
+	line-height: 44px;
+    color: #8c8c8c;
+    margin-left: -100px;
+}
+/*placeholder*/
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #B9B9B9; 
+    opacity:1; 
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #B9B9B9;
+    opacity:1;
+}
+
+input:-ms-input-placeholder{
+    color: #B9B9B9;
+    opacity:1;
+}
+
+input::-webkit-input-placeholder{
+    color: #B9B9B9;
+    opacity:1;
+}
+.client-refuse-reason{
+	line-height: 44px;
+    color: #E14546;
+    display: inline-block;
+    width: 700px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 15px;
+}
+.client-space{
+    display: inline-block;
+    width: 10px;
+}
+.client-unit{
+	line-height: 44px;
+    margin-left: 20px;
+}
+.client-chart-wrapper{
+    width: 230px;
+    padding: 20px 0;
+}
+.client-other-banks-wrapper{
+	margin-left: 230px;
+}
+.client-chart{
+	height: 250px;
+    margin-top: 24px;
+}
+.w2ui-overlay > div{
+	border: 3px solid #777777 !important;
+}

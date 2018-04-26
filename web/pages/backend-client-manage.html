@@ -1,0 +1,197 @@
+<!DOCTYPE>
+<html > <!-- 遵循W3C规范 具体去看一下百度百科-->
+<head>
+    <title>CIB</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"> <!-- 规范网页编码格式UTF-8 -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Expires" CONTENT="0"> 
+</head>
+<body>
+	<script src="../js/base.js" type="text/javascript" charset="utf-8" id="seajsnode"></script>
+	<div id="wrap">
+		<div id="right-content">
+			<h1 class="page-name">客户管理</h1>
+			<div id="right-main-content" class="bg-white">
+				<ul>
+					<li>
+						<div class="import-btn">导入</div>
+						<input type="file" id="upload_file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" style="display: none;" />
+					</li>
+					<li>
+						<div class="define-btn">有效客户定义</div>
+					</li>
+					<li>
+						<div class="standard-btn">月度业务量标准</div>
+					</li>
+				</ul>
+				<div id="myGrid"></div>
+				<div id="pagination"></div>
+				<div class='define-form-inner'>
+					<div class="input-wrap">
+						<span>落地业务量最小值:</span>
+						<input class="min-value">&nbsp;万元
+					</div>
+					<div class="check-wrap">
+						<div class="check-title">计算的产品:</div>
+						<div class="check-box">
+							<span class="check-item">
+								<input type="checkbox">&nbsp;存款
+							</span>
+						</div>
+					</div>
+					<div class="btn-wrap">
+						<span class="confirm-btn confirm-define">保存</span>
+						<span class="cancel-btn cancel-define">取消</span>
+					</div>
+				</div>
+				<div class='monthly-form-inner'>
+					<div class="input-wrap">
+						<span>落地业务量标准:</span>
+						<input class="landing-value">&nbsp;万元
+					</div>
+					<div class="input-wrap">
+						<span>意向业务量标准:</span>
+						<input class="Intentional-value">&nbsp;万元
+					</div>
+					<div class="btn-wrap">
+						<span class="confirm-btn confirm-montyly">保存</span>
+						<span class="cancel-btn cancel-montyly">取消</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/html" id="info">
+		<div class="info-wrap">
+			<ul class="info-ul">
+				<li class="info-item">
+					<span class="info-title">客户编号:</span>
+					<span class="info-input">
+						<input type="text" value="{{data.customerInfoCode}}" disabled="disabled" />
+					</span>
+				</li>
+				<li class="info-item">
+					<span class="info-title">客户名称:</span>
+					<span class="info-input">
+						<input type="text" value="{{data.customerName}}" disabled="disabled" />
+					</span>
+				</li>
+				<li class="info-item">
+					<span class="info-title">集团名称:</span>
+					<span class="info-input">
+						<input type="text" value="{{data.companyName}}" disabled="disabled" />
+					</span>
+				</li>
+				<li class="info-item">
+					<span class="info-title">战略客户:</span>
+					<span class="info-input">
+					{{if data.isStrategic == 0}}
+						<input type="text" value="否" disabled="disabled" />
+					{{else}}
+						<input type="text" value="是" disabled="disabled" />
+					{{/if}}
+					</span>
+				</li>
+				<li class="info-item">
+					<span class="info-title">一级行业:</span>
+					<span class="info-input">
+						<input type="text" value="{{data.level1}}" disabled="disabled" />
+					</span>
+				</li>
+				<li class="info-item">
+					<span class="info-title">二级行业:</span>
+					<span class="info-input">
+						<input type="text" value="{{data.level2}}" disabled="disabled" />
+					</span>
+				</li>
+				<li class="info-item">
+					<span class="info-title">三级行业:</span>
+					<span class="info-input">
+						<input type="text" value="{{data.level3}}" disabled="disabled" />
+					</span>
+				</li>
+				<li class="info-item">
+					<span class="info-title">开户时间:</span>
+					<span class="info-input">
+						<input type="text" value="{{data.startTime}}" disabled="disabled" />
+					</span>
+				</li>
+				<!-- <li class="info-item">
+					<span class="info-title">合作年限:</span>
+					<span class="info-input">
+						<input type="text" value="{{data.cooperationYear}}" disabled="disabled" />
+					</span>
+				</li> -->
+				<li class="info-item">
+					<span class="info-title">客户经理:</span>
+					<span class="info-input">
+						<input type="text" value="{{data.employeeName}}" disabled="disabled" />
+					</span>
+				</li>
+				<li class="info-item">
+					<span class="info-title">所属分行:</span>
+					<span class="info-input">
+						<input type="text" value="{{data.bankBranchName}}" disabled="disabled" />
+					</span>
+				</li>
+				<li class="info-item">
+					<span class="info-title">所属支行:</span>
+					<span class="info-input">
+						<input type="text" value="{{data.bankSubsetName}}" disabled="disabled" />
+					</span>
+				</li>
+				<li class="info-item">
+					<span class="info-title">信用评级:</span>
+					<span class="info-input">
+						<input type="text" value="{{data.creditRating}}" disabled="disabled" />
+					</span>
+				</li>
+				<li class="info-item">
+					<span class="info-title">是否已出现风险</span>
+					<span class="info-input">
+						{{if data.hasrRisk == 0}}
+							<input type="text" value="否" disabled="disabled" />
+						{{else}}
+							<input type="text" value="是" disabled="disabled" />
+						{{/if}}
+					</span>
+				</li>
+				<li class="info-item">
+					<span class="info-title">年收入(万元):</span>
+					<span class="info-input">
+						<input type="text" value="{{data.annualIncome}}" disabled="disabled" />
+					</span>
+				</li>
+				<li class="info-item">
+					<span class="info-title">授信金额(万元):</span>
+					<span class="info-input">
+						<input type="text" value="{{data.creditAmount}}" disabled="disabled" />
+					</span>
+				</li>
+				<li class="info-item">
+					<span class="info-title">是否开通网银:</span>
+					<span class="info-input">
+						<input type="text" value="{{data.ebank}}" disabled="disabled" />
+					</span>
+				</li>
+				<li class="info-item">
+					<span class="info-title">支付交易笔数:</span>
+					<span class="info-input">
+						<input type="text" value="{{data.dealCount}}" disabled="disabled" />
+					</span>
+				</li>
+				<li class="info-item">
+					<span class="info-title">支付交易金额(元):</span>
+					<span class="info-input">
+						<input type="text" value="{{data.dealMoney}}" style="width: 130px;" disabled="disabled" />
+					</span>
+				</li>
+			</ul>
+		</div>
+	</script>
+</body>
+</html>

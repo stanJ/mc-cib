@@ -1,0 +1,88 @@
+#right-main-content{
+	position: relative;
+}
+/* w2ui */
+#myGrid{
+	width: 80%;
+	height: 80%;
+	margin: 60px auto;
+}
+.custom-grid{
+    border: 0 none;
+}
+.w2ui-grid{
+	height: 300px;
+	border: 1px solid rgba(0,0,0,0.2);
+}
+.w2ui-grid-body table .w2ui-head{
+    border: 0 none;
+}
+.w2ui-grid .w2ui-grid-body table td{
+    border: 0 none;
+}
+.w2ui-grid .w2ui-grid-body .w2ui-grid-columns, .w2ui-grid .w2ui-grid-body .w2ui-grid-fcolumns{
+	box-shadow: none;
+}
+.w2ui-grid .w2ui-grid-body table .w2ui-head{
+	height: 50px;
+	border: 0 none;
+	background: rgb(240,240,240);
+}
+.w2ui-grid .w2ui-grid-body table .w2ui-head > div{
+	font-size: 14px;
+	text-align: center;
+}
+.w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-odd{
+	height: 50px;
+}
+.w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-even, .w2ui-grid .w2ui-grid-body .w2ui-grid-frecords table tr.w2ui-even{
+	background: rgb(247,248,250);
+}
+.columns-title{
+	font-size: 14px;
+	color: #000;
+}
+.w2ui-grid .w2ui-grid-body table td.w2ui-grid-data > div{
+	font-size: 14px;
+	padding: 0;
+}
+.w2ui-grid .w2ui-grid-body table td.w2ui-grid-data > div > .warnning{
+	background: rgb(244,157,20);
+	color: #fff;
+}
+.w2ui-grid .w2ui-grid-body table td.w2ui-grid-data > div > div > span{
+	display: block;
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+}
+.w2ui-grid .w2ui-grid-body table td.w2ui-grid-data > div > div > span.uptext{
+	font-size: 16px;
+}
+.w2ui-grid .w2ui-grid-body table td.w2ui-grid-data > div > div > span.downtext{
+	font-size: 12px;
+}
+
+.w2ui-grid .w2ui-grid-body table .w2ui-head{
+	border-right: 1px solid rgba(0,0,0,0.1);
+}
+.w2ui-grid .w2ui-grid-body table .w2ui-head{
+	background-color: rgb(247,248,250);
+}
+.w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-even,
+.w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-even{
+	background-color: rgb(255,255,255);
+}
+.w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-odd:hover,
+.w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-even:hover,
+.w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-odd.w2ui-record-hover,
+.w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-even.w2ui-record-hover{
+	background-color: rgb(255,255,255);
+}
+.w2ui-grid .w2ui-grid-body table td.w2ui-grid-data{
+	border-top: 1px solid rgba(0,0,0,0.1);
+	border-right: 1px solid rgba(0,0,0,0.1);
+}
+.save-btn {
+    color: rgb(71,118,199);
+}

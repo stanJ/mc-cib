@@ -1,0 +1,55 @@
+<!DOCTYPE>
+<html > <!-- 遵循W3C规范 具体去看一下百度百科-->
+<head>
+    <title>CIB</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"> <!-- 规范网页编码格式UTF-8 -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Expires" CONTENT="0"> 
+</head>
+<body>
+	<script src="../js/base.js" type="text/javascript" charset="utf-8" id="seajsnode"></script>
+	<div id="wrap">
+		<div id="right-content">
+			<h1 class="page-name">销售用时分析</h1>
+			<div id="top-select-wrap">
+				<div class="top-select bg-base-blue">
+					<div class="select-box bg-white">
+						<select name="state" id="subsidiary" class="js-example-basic-single">
+							<option></option>
+						</select>
+					</div>
+				</div>
+				<div class="top-select bg-base-blue">
+					<div class="select-box bg-white">
+						<select name="state" id="branch" class="js-example-basic-single">
+							<option></option>
+						</select>
+					</div>
+				</div>
+				<div class="top-select bg-base-blue">
+					<div class="select-box bg-white">
+						<select name="state" id="manager" class="js-example-basic-single"></select>
+					</div>
+				</div>
+			</div>
+			<div id="right-main-content" class="bg-white">
+				
+				<div id="top-filter">
+					<ul id="line-filter">
+						<li class="filter-title">指定首列字段:</li>
+					</ul>
+					<div class="top-days">
+						<span class='top-1-days'>平均用时(天)&nbsp;/&nbsp;</span><span class='top-2-days'>落后用时(天)</span>
+					</div>
+					<div class="clearfix"></div>
+				</div>				
+				<div id="myGrid" class="no-border-grid custom-grid"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

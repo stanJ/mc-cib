@@ -1,0 +1,189 @@
+<!DOCTYPE>
+<html > <!-- 遵循W3C规范 具体去看一下百度百科-->
+<head>
+    <title>CIB</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"> <!-- 规范网页编码格式UTF-8 -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Expires" CONTENT="0"> 
+</head>
+<body>
+	<script src="../js/base.js" type="text/javascript" charset="utf-8" id="seajsnode"></script>
+	<div id="wrap">
+		<div id="right-content">
+			<div class="homepage-header__title" style="margin-bottom: 18px;">
+				<div class="homepage-title-wrapper">
+					<div class="homepage-title">客户信息</div>
+					<div class="homepage-refresh-date">数据截止日期2017年12月25日</div>
+				</div>
+			</div>
+			<div class="client-info-wrapper">
+				
+			</div>
+		</div>
+	</div>
+	<!--客户信息-->
+	<!--<script type="text/html" id="client-info">
+		{{ set info = data.customerInfo }}
+		<div class="client-title bg-base-blue">{{info.customerName}}</div>
+		<div class="client-main-info-wrapper">
+			<div class="client-main-info clearfix">
+				<div class="client-main-info__left">
+					<div class="client-main-info__one clearfix">
+						<div class="client-main-info__field">客户编号:</div>
+						<div class="client-main-info__value">{{info.customerCode}}</div>
+					</div>
+					<div class="client-main-info__one clearfix">
+						<div class="client-main-info__field">所属集团:</div>
+						<div class="client-main-info__value">{{info.companyName}}</div>
+					</div>
+					<div class="client-main-info__one clearfix">
+						<div class="client-main-info__field">主办客户经理:</div>
+						<div class="client-main-info__value">
+							<div class="manager-name-wrapper">
+								<span class="manager-name">{{info.employeeName}}</span>
+								<div class="icon icon--phone" data-id="{{info.employeeId}}"></div>
+							</div>
+						</div>
+					</div>
+					<div class="client-main-info__one clearfix">
+						<div class="client-main-info__field">分行:</div>
+						<div class="client-main-info__value">{{info.bankBranchName}}</div>
+					</div>
+					<div class="client-main-info__one clearfix">
+						<div class="client-main-info__field">信用评级:</div>
+						<div class="client-main-info__value">{{info.creditRating}}</div>
+					</div>
+				</div>
+				<div class="client-main-info__right">
+					<div class="client-main-info__one clearfix">
+						<div class="client-main-info__field">战略客户:</div>
+						<div class="client-main-info__value">{{info.isStrategic | isOrNot}}</div>
+					</div>
+					<div class="client-main-info__one clearfix">
+						<div class="client-main-info__field">客户分层:</div>
+						<div class="client-main-info__value">{{info.customerClass}}</div>
+					</div>
+					<div class="client-main-info__one clearfix">
+						<div class="client-main-info__field">是否存在风险:</div>
+						<div class="client-main-info__value">{{info.hasrRisk | isOrNot}}</div>
+					</div>
+					<div class="client-main-info__one clearfix">
+						<div class="client-main-info__field">支行:</div>
+						<div class="client-main-info__value">{{info.bankSubsetName}}</div>
+					</div>
+					<div class="client-main-info__one clearfix">
+						<div class="client-main-info__field">行业:</div>
+						<div class="client-main-info__value">{{info.tradeName}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</script>-->
+	<script type="text/html" id="client-info">
+		{{ set info = data.CustomerInfo }}
+		<div class="client-title bg-base-blue">
+			<span class="client-main-info__value" style="margin-left: 0;line-height: 50px;">{{info.customerName}}</span>
+			<div class="client-title__input">
+				<div class="client-main-info__input" style="margin-left: 0;">
+					<input type="hidden" />
+					<input name="customerName" type="text" style="text-align: center;"/>
+				</div>
+			</div>
+		</div>
+		<div class="client-main-info-wrapper">
+			<div class="client-main-info clearfix">
+				<div class="client-main-info__left" style="width: 50%;">
+					<div class="client-main-info__one clearfix">
+						<div class="client-main-info__field">客户编号:</div>
+						<div class="client-main-info__value">{{info.customerCode}}</div>
+						<div class="client-main-info__input">
+							<input name="customerCode" type="text" />
+						</div>
+					</div>
+					<div class="client-main-info__one clearfix">
+						<div class="client-main-info__field">所属集团:</div>
+						<div class="client-main-info__value">{{info.companyName}}</div>
+						<div class="client-main-info__input">
+							<input name="companyName" type="text" />
+						</div>
+					</div>
+					<div class="client-main-info__one clearfix">
+						<div class="client-main-info__field">主办客户经理:</div>
+						<div class="client-main-info__value" id="value--manager">
+							<div class="manager-name-wrapper">
+								<span class="manager-name">{{info.employeeName}}</span>
+								<!--<div class="icon icon--phone tagged" data-id="33" data-mobile="暂无联系方式"></div>-->
+							</div>
+						</div>
+						<div class="client-main-info__input" id="input--manager">
+							<input name="employeeId" type="list" />
+						</div>
+					</div>
+					<div class="client-main-info__one clearfix">
+						<div class="client-main-info__field">分行:</div>
+						<div class="client-main-info__value">{{info.bankBranchName}}</div>
+						<div class="client-main-info__input">
+							<input name="bankBranchId" type="list" />
+						</div>
+					</div>
+					<div class="client-main-info__one clearfix">
+						<div class="client-main-info__field">信用评级:</div>
+						<div class="client-main-info__value">{{info.creditRating}}</div>
+						<div class="client-main-info__input">
+							<input name="creditRating" type="list" />
+						</div>
+					</div>
+				</div>
+				<div class="client-main-info__right" style="width: 50%;">
+					<div class="client-main-info__one clearfix">
+						<div class="client-main-info__field">战略客户:</div>
+						<div class="client-main-info__value">{{info.isStrategic | isOrNot}}</div>
+						<div class="client-main-info__input">
+							<input name="isStrategic" type="list" />
+						</div>
+					</div>
+					<div class="client-main-info__one clearfix">
+						<div class="client-main-info__field">客户分层:</div>
+						<div class="client-main-info__value" data-show="yes">{{info.customerClass}}</div>
+					</div>
+					<div class="client-main-info__one clearfix">
+						<div class="client-main-info__field">是否存在风险:</div>
+						<div class="client-main-info__value">{{info.hasrRisk | isOrNot}}</div>
+						<div class="client-main-info__input">
+							<input name="hasrRisk" type="list" />
+						</div>
+					</div>
+					<div class="client-main-info__one clearfix">
+						<div class="client-main-info__field">支行:</div>
+						<div class="client-main-info__value">{{info.bankSubsetName}}</div>
+						<div class="client-main-info__input">
+							<input name="bankSubsetId" type="list" />
+						</div>
+					</div>
+					<div class="client-main-info__one clearfix">
+						<div class="client-main-info__field">行业:</div>
+						<div class="client-main-info__value">{{info.tradeName}}</div>
+						<div class="client-main-info__input">
+							<input name="level1Code" type="list" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="client-info__btns-wrapper clearfix">
+				<div class="block-btns clearfix">
+					<!--客户经理 支行 分行 总行 可以编辑-->
+					{{if data.roleId == 1 || data.roleId == 3 || data.roleId == 4 || data.roleId == 5}}
+					<div class="block-btn block-btn--edit">编辑</div>
+					{{/if}}
+					<div class="block-btn block-btn--save" style="display: none;">保存</div>
+					<div class="block-btn block-btn--default block-btn--cancel" style="display: none;">取消</div>
+				</div>
+			</div>
+		</div>
+	</script>
+</body>
+</html>

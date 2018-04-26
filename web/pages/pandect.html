@@ -1,0 +1,117 @@
+<!DOCTYPE>
+<html > <!-- 遵循W3C规范 具体去看一下百度百科-->
+<head>
+    <title>CIB</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"> <!-- 规范网页编码格式UTF-8 -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Expires" CONTENT="0"> 
+</head>
+<body>
+	<script src="../js/base.js" type="text/javascript" charset="utf-8" id="seajsnode"></script>
+	<div id="wrap">
+		<div id="right-content">
+			<h1 class="page-name">客户总览</h1>
+			<div id="top-select-wrap">
+				<div class="top-select bg-base-blue">
+					<div class="select-box bg-white">
+						<select name="state" id="subsidiary" class="js-example-basic-single"></select>
+					</div>
+				</div>
+				<div class="top-select bg-base-blue">
+					<div class="select-box bg-white">
+						<select name="state" id="branch" class="js-example-basic-single"></select>
+					</div>
+				</div>
+				<div class="top-select bg-base-blue date-select">
+					<div class="select-box bg-white">
+						<select id="estimate" class="js-example-basic-single"></select>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div id="right-main-content" class="bg-white">
+				<h2 class="content-title">客户总览</h2>
+				<div class="main-content-wrap">
+					<div class="left-chart-wrap">
+						<!-- <ul class="pie-legend">
+							<li><span class='total-square'></span>总户数</li>
+							<li><span class='sleep-square'></span>休眠户</li>
+							<li><span class='risk-square'></span>有贷户-已出风险</li>
+							<li><span class='norisk-square'></span>有贷户-未出风险</li>
+							<li><span class='unloan-square'></span>无贷户</li>
+						</ul> -->
+						<div id="chart-container1" class="chart-container"></div>
+						<div id="chart-container2" class="chart-container"></div>
+					</div>
+					<div class="right-customer-warp">
+						<div class="left-table-title">
+							<div class="total">总户数</div>
+							<div class="loan">
+								<div class="left-loan"><span class='tb-text'>有<br />贷<br />户<br />数</span></div>
+								<div class="right-loan">
+									<div class="loan-norisk float-bar">正常客户</div>
+									<div class="loan-risk float-bar">风险警示客户</div>									
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="unloan float-bar">无贷户</div>
+							<div class="sleep float-bar">休眠户</div>						
+						</div>
+						<div class="right-table">
+							<div class="right-top-table">
+								<ul class="clearfix">
+									<li class='no-border'>
+										<div><span>对公客户分类(户)</span></div>
+									</li>
+									<li>
+										<div><span>存款日均余额(亿元)</span></div>
+									</li>
+									<li>
+										<div><span>EAD日均余额(亿元)</span></div>
+									</li>
+									<li>
+										<div><span>YTD净收入(亿元)</span></div>
+									</li>
+									<li>
+										<div><span>经济利润(亿元)</span></div>
+									</li>
+								</ul>
+							</div>
+							<div class="right-table-content">
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				</div>
+		</div>
+	</div>
+</body>
+<script type="text/html" id="table-body">
+	{{each data items i}}
+		{{if i != "total"}}
+		<ul class="float-ul clearfix">
+		{{else}}
+		<ul class="clearfix">
+		{{/if}}
+			{{each items item j}}
+				{{if j == 0}}
+					<li class="no-border">
+						<!-- <span class='item-title'>{{title[i]}}</span> -->
+						<span class='item-val'>{{item == 0 ? "-" : item}}</span>
+					</li>
+				{{else}}
+					<li>
+						<span class='item-val'>{{item == 0 ? "-" : item}}</span>
+					</li>
+				{{/if}}
+			{{/each}}
+		</ul>
+	{{/each}}
+</script>
+</html>

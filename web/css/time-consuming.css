@@ -1,0 +1,95 @@
+#subsidiary,
+#branch{
+	display: none;
+}
+.select2-results__option{
+	padding: 15px 6px;
+}
+.top-filter{
+	position: relative;
+}
+#line-filter{
+	float: left;
+	width: 50%;
+}
+#line-filter .tab-filter-selected{
+	font-weight: bold;
+	color: rgb(30,30,30);
+}
+.top-days{
+	float: right;
+	height: 50px;
+	line-height: 50px;
+	padding-right: 20px;
+}
+.top-1-days{
+	font-size: 16px;
+}
+.top-2-days{
+	font-size: 14px;
+}
+#myGrid{
+	overflow: hidden;
+}
+/* w2ui */
+.custom-grid{
+    border: 0 none;
+}
+.w2ui-grid-body table .w2ui-head{
+    border: 0 none;
+}
+.w2ui-grid .w2ui-grid-body table td{
+    border: 0 none;
+}
+.w2ui-grid .w2ui-grid-body .w2ui-grid-columns, .w2ui-grid .w2ui-grid-body .w2ui-grid-fcolumns{
+	box-shadow: none;
+}
+.w2ui-grid .w2ui-grid-body table .w2ui-head{
+	height: 50px;
+	border: 0 none;
+	background: rgb(240,240,240);
+}
+.w2ui-grid .w2ui-grid-body table .w2ui-head > div{
+	font-size: 14px;
+	text-align: center;
+}
+.w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-odd{
+	height: 50px;
+}
+.w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-even, .w2ui-grid .w2ui-grid-body .w2ui-grid-frecords table tr.w2ui-even{
+	background: rgb(247,248,250);
+}
+.columns-title{
+	font-size: 14px;
+	color: #000;
+}
+.w2ui-grid .w2ui-grid-body table td.w2ui-grid-data > div{
+	font-size: 16px;
+	padding: 0;
+	white-space: normal;
+	text-overflow: none;
+}
+.w2ui-grid .w2ui-grid-body table td.w2ui-grid-data > div > .warnning{
+	background: rgb(244,157,20);
+	color: #fff;
+}
+.w2ui-grid .w2ui-grid-body table td.w2ui-grid-data > div > div{
+	height: 60px;
+}
+.w2ui-grid .w2ui-grid-body table td.w2ui-grid-data > div > div > span{
+	display: inline-block;
+	height: 60px;
+	line-height: 60px;
+}
+.w2ui-grid .w2ui-grid-body table td.w2ui-grid-data > div > div > span.uptext{
+	font-size: 16px;
+}
+.w2ui-grid .w2ui-grid-body table td.w2ui-grid-data > div > div > span.downtext{
+	font-size: 12px;
+}
+
+
+
+#grid_Time_rec_0 td{
+	color:rgb(55,165,254);
+}

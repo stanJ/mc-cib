@@ -1,0 +1,341 @@
+<!DOCTYPE>
+<html > <!-- 遵循W3C规范 具体去看一下百度百科-->
+<head>
+    <title>CIB</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"> <!-- 规范网页编码格式UTF-8 -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Expires" CONTENT="0"> 
+</head>
+<body>
+	<script src="../js/base.js" type="text/javascript" charset="utf-8" id="seajsnode"></script>
+	<div id="wrap">
+		<div id="right-content">
+			<div class="homepage-title-wrapper">
+				<div class="homepage-title">客户清单-筛选</div>
+				<div class="homepage-refresh-date">数据截止日期</div>
+			</div>
+			<div id="top-select-wrap" style="margin-top: 10px;">
+				<div class="top-select bg-base-blue">
+					<div class="select-box bg-white">
+						<select name="state" id="subsidiary" class="js-example-basic-single">
+							<option></option>
+						</select>
+					</div>
+				</div>
+				<div class="top-select bg-base-blue">
+					<div class="select-box bg-white">
+						<select name="state" id="branch" class="js-example-basic-single">
+							<option></option>
+						</select>
+					</div>
+				</div>
+				<div class="top-select bg-base-blue date-select">
+					<div class="select-box bg-white">
+						<select id="estimate" class="js-example-basic-single"></select>
+					</div>
+				</div>
+				<div class="top-select bg-base-blue">
+					<div class="select-box bg-white">
+						<select id="manager" class="js-example-basic-single"></select>
+					</div>
+				</div>
+				<div class="data-btns">
+					<label class="data-btn data-btn--import">
+							导入
+						<input type="file" id="import-customer" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" style="display: none;">
+					</label>
+					<div class="data-btn data-btn--export">导出</div>
+				</div>
+			</div>
+			<div class="switch-wrapper">
+				<div class="switch switch--customer-list">
+					<div class="switch__inner">
+						<div class="switch__item selected" data-index="1">筛选</div>
+						<div class="switch__item" data-index="2">搜索</div>
+					</div>
+				</div>
+			</div>
+			<div class="screen-wrapper">
+				<div class="screen">
+					<div class="screen__operation clearfix">
+						<div class="screen__select-wrapper">
+							<div class="screen__title">筛选条件:</div>
+							<div class="screen__select-btn">选择</div>
+						</div>
+						<div class="screen__arrow-wrapper">
+							<div class="screen__arrow screen__arrow--down"></div>
+						</div>
+					</div>
+					<div class="screen__conditions">
+					</div>
+				</div>
+			</div>
+			<div class="search-wrapper" style="display: none;">
+				<div class="top-select bg-base-blue" style="display: inline-block;">
+					<div class="select-box bg-white">
+						<select name="state" id="field-select" class="js-example-basic-single">
+							<option></option>
+						</select>
+					</div>
+				</div>
+				<div class="search-select-wrapper">
+					<div class="select2-wrapper">
+						<select id="search-select"></select>
+					</div>
+				</div>
+			</div>
+			<div class="page-content" style="padding: 0 0 20px;">
+				<div class="fields-wrapper">
+					<div class="fields">
+						<div class="fields__title">指定字段:</div>
+						<div class="fields__content clearfix">
+							<div class="fields__item disabled">客户编号</div>
+							<div class="fields__item selected">客户年收入</div>
+							<div class="fields__item">客户规模</div>
+						</div>
+					</div>
+				</div>
+				<div class="block-btns-wrapper clearfix">
+					<div class="block-btns clearfix">
+						<div class="block-btn block-btn--add">新建</div>
+						<div class="block-btn-text" id="markBtn">标记为待规划客户</div>
+					</div>
+				</div>
+				<div class="customer-list-table"></div>
+			</div>
+		</div>
+	</div>
+	<script type="text/html" id="popupSelect">
+		<div class="popup-wrap">
+			<div class="tab-wrap clearfix">
+				<ul class="tab-ul">
+					<li class="tab-item" data-type="STRATEGIC">战略客户</li>
+					<li class="tab-item" data-type="SIZE">客户规模</li>
+					<li class="tab-item" data-type="TRADE">行业</li>
+					<li class="tab-item" data-type="DURATION">合作时长</li>
+					<li class="tab-item" data-type="CREDIT">信用评级</li>
+					<li class="tab-item" data-type="CATEGORY">客户类别</li>
+					<li class="tab-item" data-type="TYPE">客户类型</li>
+					<li class="tab-item" data-type="MARK">客户标识</li>
+					<!--<li class="tab-item" data-type="ORGAN">分支机构</li>
+					<li class="tab-item" data-type="LEVER">客户分层</li>
+					<li class="tab-item" data-type="MANAGER">客户经理</li>-->
+				</ul>
+			</div>
+			<div class="select-wrap strategic-select-wrap" data-target="STRATEGIC">
+				<div class="item-wrap list-level1 item-gray-bg">
+				</div>
+				<div class="item-wrap list-level2">
+				</div>
+				<div class="item-wrap list-level3 item-gray-bg"></div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="select-wrap size-select-wrap" data-target="SIZE">
+				<div class="item-wrap list-level1 item-gray-bg">
+				</div>
+				<div class="item-wrap list-level2">
+				</div>
+				<div class="item-wrap list-level3 item-gray-bg"></div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="select-wrap trade-select-wrap" data-target="TRADE">
+				<div class="item-wrap list-level1 item-gray-bg">
+				</div>
+				<div class="item-wrap list-level2">
+				</div>
+				<div class="item-wrap list-level3 item-gray-bg"></div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="select-wrap duration-select-wrap" data-target="DURATION">
+				<div class="item-wrap list-level1 item-gray-bg">
+				</div>
+				<div class="item-wrap list-level2">
+				</div>
+				<div class="item-wrap list-level3 item-gray-bg"></div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="select-wrap credit-select-wrap" data-target="CREDIT">
+				<div class="item-wrap list-level1 item-gray-bg">
+				</div>
+				<div class="item-wrap list-level2">
+				</div>
+				<div class="item-wrap list-level3 item-gray-bg"></div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="select-wrap organ-select-wrap" data-target="CATEGORY">
+				<div class="item-wrap list-level1 item-gray-bg">
+				</div>
+				<div class="item-wrap list-level2">
+				</div>
+				<div class="item-wrap list-level3 item-gray-bg"></div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="select-wrap lever-select-wrap" data-target="TYPE">
+				<div class="item-wrap list-level1 item-gray-bg">
+				</div>
+				<div class="item-wrap list-level2">
+				</div>
+				<div class="item-wrap list-level3 item-gray-bg"></div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="select-wrap manager-select-wrap" data-target="MARK">
+				<div class="item-wrap list-level1 item-gray-bg">
+				</div>
+				<div class="item-wrap list-level2">
+				</div>
+				<div class="item-wrap list-level3 item-gray-bg"></div>
+				<div class="clearfix"></div>
+			</div>
+			<!--<div class="select-wrap organ-select-wrap" data-target="ORGAN">
+				<div class="item-wrap list-level1 item-gray-bg">
+				</div>
+				<div class="item-wrap list-level2">
+				</div>
+				<div class="item-wrap list-level3 item-gray-bg"></div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="select-wrap lever-select-wrap" data-target="LEVER">
+				<div class="item-wrap list-level1 item-gray-bg">
+				</div>
+				<div class="item-wrap list-level2">
+				</div>
+				<div class="item-wrap list-level3 item-gray-bg"></div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="select-wrap manager-select-wrap" data-target="MANAGER">
+				<div class="item-wrap list-level1 item-gray-bg">
+				</div>
+				<div class="item-wrap list-level2">
+				</div>
+				<div class="item-wrap list-level3 item-gray-bg"></div>
+				<div class="clearfix"></div>
+			</div>-->
+			<div class="btn-wrap">
+				<div class="reset-btn">重置</div>
+				<div class="confirm-btn">完成</div>
+			</div>
+		</div>
+	</script>
+	<script type="text/html" id="fields">
+		{{each data}}
+		{{if $value.field == 'customerCode' || $value.field == 'customerName' || $value.field == 'companyName' || $value.field == 'strategicAccount'}}
+		<!--<div class="fields__item disabled" data-field="{{$value.field}}">{{$value.caption}}</div>-->
+		{{else}}
+		<div class="fields__item" data-field="{{$value.field}}">{{$value.caption}}</div>
+		{{/if}}
+		<!--<div class="fields__item selected">客户年收入</div>-->
+		{{/each}}
+	</script>
+	<script type="text/html" id="customer-form">
+		<div class="w2ui-page page-0">
+			<div class="col-wrapper clearfix">
+				<div class="col col-12">
+					<div class="w2ui-field">
+						<label>客户编号:</label>
+					   <div>
+							<input name="customerCode" type="text"/>
+						</div>
+					</div>
+				</div>
+				<div class="col col-12">
+					<div class="w2ui-field">
+						<label>客户名称:</label>
+					   <div>
+							<input name="customerName" type="text"/>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-wrapper clearfix">
+				<div class="col col-12">
+					<div class="w2ui-field">
+						<label>集团名称:</label>
+					   <div>
+							<input name="companyName" type="text"/>
+						</div>
+					</div>
+				</div>
+				<div class="col col-12">
+					<div class="w2ui-field field--branch">
+						<label>客户规模:</label>
+					   <div>
+							<input name="customerSize" type="list"/>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-wrapper clearfix">
+				<div class="col col-12">
+					<div class="w2ui-field">
+						<label>一级行业:</label>
+					   <div>
+							<input name="level1Code" type="list"/>
+						</div>
+					</div>
+				</div>
+				<div class="col col-12">
+					<div class="w2ui-field field--branch">
+						<label>二级行业:</label>
+					   <div>
+							<input name="level2Code" type="list"/>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-wrapper clearfix">
+				<div class="col col-12">
+					<div class="w2ui-field">
+						<label>三级行业:</label>
+					   <div>
+							<input name="level3Code" type="list"/>
+						</div>
+					</div>
+				</div>
+				<div class="col col-12">
+					<div class="w2ui-field field--branch">
+						<label>所属分行:</label>
+					   <div>
+							<input name="bankBranchId" type="list"/>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-wrapper clearfix">
+				<div class="col col-12">
+					<div class="w2ui-field">
+						<label>所属支行:</label>
+					   <div>
+							<input name="bankSubsetId" type="list"/>
+						</div>
+					</div>
+				</div>
+				<div class="col col-12">
+					<div class="w2ui-field field--branch">
+						<label>客户经理:</label>
+					   <div>
+							<input name="employeeId" type="list"/>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+        <div class="w2ui-buttons">
+            <button class="button popup-btn button--primary" name="save">确定</button>
+            <button class="button popup-btn button--cancel" name="reset">取消</button>
+        </div>
+	</script>
+	<!--收入明细-->
+	<script type="text/html" id="money-detail">
+		{{each data}}
+		<div class="detail__one">
+			<span class="detail__text">{{$value.productName}}:</span>
+			<span class="detail__value">{{$value.productValue}}</span>
+		</div>
+		{{/each}}
+	</script>
+</body>
+</html>

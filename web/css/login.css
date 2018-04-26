@@ -1,0 +1,110 @@
+.login-title{
+	margin-top: 20px;
+	width: 100%;
+	font-size: 44px;
+	font-weight: normal;
+	font-family: "Arial";
+	color: #fff;
+	text-align: center;
+}
+.login-wrap{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	background: url(../images/bg_login_bank.jpg) center top no-repeat;
+	background-size: 100% auto;
+}
+/*.login-blur{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -165px;
+	margin-left: -298px;
+	padding: 10px 0 20px 0;
+	width: 596px;
+	height: 330px;
+	z-index: 200;
+	background: url(../images/bg_login_bank.jpg) center center no-repeat;
+	filter: blur(20px);
+	border-radius: 6px;
+}*/
+.login-box{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -165px;
+	margin-left: -298px;
+	padding: 10px 0 20px 0;
+	width: 596px;
+	height: 330px;
+	background: url(../images/bg_login.png) 0 0 no-repeat;
+	/*background: rgba(181,180,174, 0.8);
+	filter: blur(10px);*/
+	border-radius: 6px;
+	z-index: 300;
+}
+.login-inner{
+	position: relative;
+	padding-top: 30px;
+}
+.input-wrap{
+	margin: 0 auto;
+	width: 260px;
+	height: 36px;
+	border: 1px solid rgba(0,0,0,0.1);
+	border-radius: 6px;
+	background: #fff;
+}
+.pass{
+	background: rgba(181,183,186,0.4);
+	margin-top: 10px;
+	color:#fff;
+}
+.login-btn{
+	margin: 20px auto 0 auto;
+	width: 260px;
+	height: 36px;
+	line-height: 36px;
+	border-radius: 6px;
+	background: rgb(71,118,199);
+	text-align: center;
+	color: #fff;
+	cursor: pointer;
+}
+.input-icon,
+.input-user,
+.input-password{
+	display: inline-block;
+	vertical-align: middle;
+	height: 100%;
+}
+.input-icon{
+	position: relative;
+	width: 35px;
+}
+.input-icon:after{
+	content: "|";
+	position: absolute;
+	top: 7px;
+	right: 0;
+	color: rgb(210,210,210);
+}
+.icon-user{
+	background: url(../images/ic_gonghao.png) center center no-repeat;
+}
+.icon-password{
+	background: url(../images/ic_password_white.png) center center no-repeat;
+}
+.input-user,
+.input-password{
+	width: 210px;
+}
+.username,
+.password{
+	padding-left: 10px;
+	height: 100%;
+	background: none;
+}
+.password{
+	color: #fff;
+}
